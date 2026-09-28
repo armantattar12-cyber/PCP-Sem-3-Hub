@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1450" viewBox="0 0 1400 1450">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#162230}.title{font-size:52px;font-weight:800;fill:#0b82c6}.kicker{font-size:24px;font-weight:700;fill:#687887}.h{font-size:29px;font-weight:800;fill:#0b82c6}.bar{fill:#064b70}.bartext{font-size:22px;font-weight:800;fill:#fff}.lab{font-size:20px;font-weight:800}.v{font-size:20px}.small{font-size:18px;fill:#334657}.row{fill:#c8e9f8}.white{fill:#fff}.line{stroke:#1b3140;stroke-width:2}.accent{stroke:#f06b2b;stroke-width:6;stroke-linecap:round}
+</style>
+<rect width="1400" height="1450" rx="28" fill="#fff"/>
+<text x="70" y="86" class="kicker">ALS PCS 5.4 • June 2, 2025 • PHRM 208 Week 2</text>
+<text x="70" y="154" class="title">Trauma Cardiac Arrest Medical Directive</text>
+<line x1="70" y1="185" x2="1330" y2="185" class="accent"/>
+<text x="70" y="245" class="h">Indications</text>
+<text x="70" y="287" class="v">Cardiac arrest secondary to severe blunt or penetrating trauma.</text>
+
+<text x="70" y="365" class="h">Conditions</text>
+<rect x="70" y="395" width="600" height="55" class="bar"/><text x="325" y="432" class="bartext">CPR</text>
+<rect x="730" y="395" width="600" height="55" class="bar"/><text x="900" y="432" class="bartext">Manual defibrillation</text>
+<rect x="70" y="450" width="600" height="55" class="white"/><text x="90" y="486" class="lab">Age</text><text x="320" y="486" class="v">N/A</text>
+<rect x="730" y="450" width="600" height="55" class="white"/><text x="750" y="486" class="lab">Age</text><text x="980" y="486" class="v">≥ 24 hours</text>
+<rect x="70" y="505" width="600" height="55" class="row"/><text x="90" y="541" class="lab">LOA</text><text x="320" y="541" class="v">Altered</text>
+<rect x="730" y="505" width="600" height="55" class="row"/><text x="750" y="541" class="lab">LOA</text><text x="980" y="541" class="v">Altered</text>
+<rect x="70" y="560" width="600" height="55" class="white"/><text x="90" y="596" class="lab">HR / RR / SBP</text><text x="320" y="596" class="v">N/A</text>
+<rect x="730" y="560" width="600" height="55" class="white"/><text x="750" y="596" class="lab">HR / RR / SBP</text><text x="980" y="596" class="v">N/A</text>
+<rect x="70" y="615" width="600" height="82" class="row"/><text x="90" y="652" class="lab">Other</text><text x="320" y="647" class="v">Performed in 2 minute</text><text x="320" y="677" class="v">intervals</text>
+<rect x="730" y="615" width="600" height="82" class="row"/><text x="750" y="652" class="lab">Other</text><text x="980" y="662" class="v">VF OR pulseless VT</text>
+
+<text x="70" y="775" class="h">Contraindications</text>
+<rect x="70" y="805" width="600" height="55" class="bar"/><text x="90" y="842" class="bartext">CPR</text>
+<text x="90" y="902" class="v">Obviously dead as per BLS PCS</text>
+<text x="90" y="945" class="v">Meets conditions of BLS PCS DNR Standard</text>
+<rect x="730" y="805" width="600" height="55" class="bar"/><text x="750" y="842" class="bartext">Manual Defibrillation</text>
+<text x="750" y="902" class="v">Rhythms other than VF or pulseless VT</text>
+
+<text x="70" y="1035" class="h">Treatment</text>
+<rect x="70" y="1065" width="1260" height="52" class="bar"/><text x="90" y="1100" class="bartext">Consider CPR as per current Heart and Stroke Foundation of Canada Guidelines</text>
+<rect x="70" y="1140" width="1260" height="52" class="bar"/><text x="90" y="1175" class="bartext">Consider manual defibrillation (if available and authorized)</text>
+<text x="100" y="1230" class="lab">Age ≥24 h to &lt;8 years</text><text x="755" y="1230" class="lab">Age ≥8 years</text>
+<text x="100" y="1273" class="v">1 defibrillation • Initial dose 2 J/kg • Max 1</text>
+<text x="755" y="1273" class="v">1 defibrillation • Initial dose as per RBHP / manufacturer • Max 1</text>
+
+<text x="70" y="1350" class="h">Clinical considerations</text>
+<text x="70" y="1390" class="small">If no obvious external signs of significant blunt trauma, consider medical cardiac arrest and use the appropriate directive.</text>
+<text x="70" y="1423" class="small">Signs of life: spontaneous movement • respiratory efforts • organized electrical activity on ECG • reactive pupils.</text>
+</svg>
