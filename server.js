@@ -101,8 +101,11 @@ Do not claim an ECG alone proves mechanical cardiac output or a pulse.
 
 CURRENT PAGE: ${String(pageTitle||"").slice(0,300)}
 
+STUDENT PROGRESS (browser-local; may be incomplete):
+${JSON.stringify(studyState||{}).slice(0,7000)}
+
 PAGE CONTEXT:
-${String(pageContext||"").slice(0,14000)}`;
+${String(pageContext||"").slice(0,24000)}`;
 
     const hist=Array.isArray(history)?history.slice(-10):[];
     const normalized=hist
