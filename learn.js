@@ -100,6 +100,42 @@ const DECKS={
 };
 
 const ORDER=["pcth-w1","pcth-w2","phrm-sga","phrm-mca"];
+const TOPIC_CARDS={
+  "pcth-w1":{
+    cells:["auto","excite","conduct","contract","refract","chrono","ino","dromo","symp","para"],
+    pacemakers:["sa-rate","av-rate","vent-rate"],
+    conduction:["path","avdelay"],
+    electrical:["depol","repol","absref","relref"],
+    ecg:["paper","ecg","qrs","twave"]
+  },
+  "pcth-w2":{
+    framework:["framework"],
+    sinus:["nsr","sb","st","sa","exit","arrest"],
+    junctional:["pjc","jeb","jer","ajr","jt"],
+    atrial:["pac","af","flutter","wap","mat"],
+    svt:["avnrt","avrt","wpw"],
+    "av-blocks":["first","m1","m2","2to1","third"],
+    arrest:["pea","shock"]
+  },
+  "phrm-sga":{
+    airway:["purpose","igel","attempts","confirm","capno","source"],
+    ventilation:["cpr","adultvent","pedvent","volume"]
+  },
+  "phrm-mca":{
+    rhythms:["shockable","nonshock","pea","vtpulse","ecg"],
+    cpr:["vent","hyper","etco2"],
+    special:["pedbrady","preg","opioid"],
+    directives:["dnr","tor","reversible"]
+  }
+};
+const TOPIC_LABELS={
+  framework:"rhythm framework",sinus:"sinus rhythms",junctional:"junctional rhythms",
+  atrial:"atrial rhythms",svt:"SVT / WPW","av-blocks":"AV blocks",arrest:"PEA / shockability",
+  cells:"cardiac cell properties",pacemakers:"pacemaker hierarchy",conduction:"conduction & AV delay",
+  electrical:"depolarization & refractory periods",ecg:"ECG fundamentals",airway:"SGA indications & placement",
+  ventilation:"advanced-airway ventilation",rhythms:"arrest rhythm recognition",cpr:"CPR / ventilation",
+  special:"special arrest considerations",directives:"DNR / TOR / reversible causes"
+};
 const STORAGE="pcpLearnProgress.v1";
 const $=s=>document.querySelector(s);
 
@@ -109,6 +145,8 @@ let index=0;
 let flipped=false;
 let known=new Set();
 let learning=new Set();
+let activeTopic="";
+let activeMode="";
 
 function loadSaved(){
   try{return JSON.parse(localStorage.getItem(STORAGE)||"{}")}catch(e){return{}}
@@ -121,6 +159,16 @@ function save(){
 function deck(){return DECKS[deckId]}
 function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]))}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
+function buildQueue(id){
+  const all=[...DECKS[id].cards];
+  const topicIds=(TOPIC_CARDS[id]||{})[activeTopic]||[];
+  let base=topicIds.length?all.filter(c=>topicIds.includes(c.id)):all;
+  if(activeMode==="weak"&&learning.size){
+    const weak=base.filter(c=>learning.has(c.id));
+    if(weak.length)base=weak;
+  }
+  return base.length?base:all;
+}
 
 function renderDeckGrid(){
   $("#deckGrid").innerHTML=ORDER.map(id=>{
@@ -130,18 +178,27 @@ function renderDeckGrid(){
   document.querySelectorAll("[data-deck]").forEach(b=>b.onclick=()=>selectDeck(b.dataset.deck));
 }
 
-function selectDeck(id){
+function selectDeck(id,useLaunch=false){
   if(!DECKS[id])return;
   deckId=id;
+  if(useLaunch){
+    const p=new URLSearchParams(location.search);
+    activeTopic=p.get("topic")||"";
+    activeMode=p.get("mode")||"";
+  }else{
+    activeTopic="";
+    activeMode="";
+  }
   const saved=loadSaved()[deckId]||{};
   known=new Set(saved.known||[]);
   learning=new Set(saved.learning||[]);
-  queue=[...deck().cards];
+  queue=buildQueue(deckId);
   index=0;
   flipped=false;
   renderDeckGrid();
   render();
-  history.replaceState(null,"","learn.html?deck="+encodeURIComponent(deckId));
+  localStorage.setItem("pcpLearnLastDeck",deckId);
+  if(!useLaunch)history.replaceState(null,"","learn.html?deck="+encodeURIComponent(deckId));
 }
 
 function current(){return queue[index]}
@@ -150,7 +207,8 @@ function render(){
   const d=deck(),c=current();
   $("#learnCourse").textContent=d.classCode+" • "+d.week;
   $("#learnTitle").textContent=d.title;
-  $("#learnMeta").textContent=d.cards.length+" cards • flip before you grade yourself";
+  const filterLabel=activeTopic?(TOPIC_LABELS[activeTopic]||activeTopic):"";
+  $("#learnMeta").textContent=(filterLabel?queue.length+" focused cards • "+filterLabel:d.cards.length+" cards")+" • flip before you grade yourself";
   $("#cardTotal").textContent=queue.length;
   $("#knownCount").textContent=known.size;
   $("#learningCount").textContent=learning.size;
@@ -244,4 +302,4 @@ document.addEventListener("keydown",e=>{
 });
 
 const requested=new URLSearchParams(location.search).get("deck");
-selectDeck(DECKS[requested]?requested:"pcth-w1");
+selectDeck(DECKS[requested]?requested:"pcth-w1",true);
