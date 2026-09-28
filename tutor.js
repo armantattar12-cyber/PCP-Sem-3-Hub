@@ -89,7 +89,8 @@
       add("assistant",j.answer||"I couldn't generate an answer.");
     }catch(err){
       thinking.remove();
-      add("assistant",err.message.includes("activation")?err.message:"The tutor backend isn't ready yet. The study pages still work normally.");
+      const msg=String(err&&err.message||"");
+      add("assistant",msg && msg!=="Failed to fetch" ? msg : "Arman couldn't connect to the tutor service. Please try again in a moment.");
     }finally{send.disabled=false;send.textContent="↑"}
   }
   renderHistory();
