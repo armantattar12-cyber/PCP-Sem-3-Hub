@@ -429,6 +429,10 @@
       else if(has(s,"traumatic cardiac arrest","trauma cardiac arrest"))topic="trauma-arrest";
       else if(has(s,"lethal diamond","hypocalcemia","coagulopathy","hypothermia","acidosis"))topic="trauma";
       const suffix=topic?"&topic="+encodeURIComponent(topic):"";
+      if(has(s,"directive image","directive visual","show directive","medical directive","algorithm")){
+        const anchor=topic==="hemorrhage"?"#w2-traumatic-hemorrhage":topic==="trauma-tor"?"#w2-trauma-tor":topic==="rosc"?"#w2-rosc":topic==="trauma-arrest"?"#w2-trauma-arrest":"#w2-directives";
+        return {label:"PHRM Week 2 • Directive Visual",href:"phrm.html"+anchor};
+      }
       if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM Week 2 • Learn",href:"learn.html?deck=phrm-w2"+suffix};
       if(has(s,"quiz","test","questions")) return {label:"PHRM Week 2 • Quiz",href:"test.html?class=phrm&material=phrm-w2&length=10"+suffix+"&start=1"};
       return {label:"PHRM Week 2",href:"phrm.html#w2"};
