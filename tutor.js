@@ -105,41 +105,41 @@
 
     if(pcthWeek(s,2)){
       return [
-        {label:"Learn • PCTH Week 2",href:"pcth.html#w2"},
+        {label:"Learn • PCTH Week 2",href:"learn.html?deck=pcth-w2"},
         {label:"Start • Standard 10",href:"test.html?class=pcth&material=pcth-w2&length=10&start=1"},
         {label:"Master • 89-Q Exam ↗",href:MASTERY_W2,external:true}
       ];
     }
     if(pcthWeek(s,1)){
       return [
-        {label:"Learn • PCTH Week 1",href:"pcth.html#w1"},
+        {label:"Learn • PCTH Week 1",href:"learn.html?deck=pcth-w1"},
         {label:"Start • Standard 10",href:"test.html?class=pcth&material=pcth-w1&length=10&start=1"}
       ];
     }
     if(phrm(s)&&has(s,"sga","supraglottic","i-gel","igel","airway")){
       return [
-        {label:"Learn • SGA Directive",href:"phrm.html#sga"},
+        {label:"Learn • SGA Directive",href:"learn.html?deck=phrm-sga"},
         {label:"Start • SGA Quiz",href:"test.html?class=phrm&material=phrm-sga&length=10&start=1"}
       ];
     }
     if(phrm(s)&&has(s,"cardiac arrest","mca","pea","vf","vt","tor")){
       return [
-        {label:"Learn • Cardiac Arrest",href:"phrm.html#mca"},
+        {label:"Learn • Cardiac Arrest",href:"learn.html?deck=phrm-mca"},
         {label:"Start • Cardiac Arrest Quiz",href:"test.html?class=phrm&material=phrm-mca&length=10&start=1"}
       ];
     }
     if(phrm(s)&&has(s,"week 1","week1","w1")){
       return [
-        {label:"Learn • SGA",href:"phrm.html#sga"},
-        {label:"Learn • Cardiac Arrest",href:"phrm.html#mca"},
+        {label:"Learn • SGA",href:"learn.html?deck=phrm-sga"},
+        {label:"Learn • Cardiac Arrest",href:"learn.html?deck=phrm-mca"},
         {label:"Start • Mixed Week 1 Quiz",href:"test.html?class=phrm&material=phrm-mixed&length=10&start=1"}
       ];
     }
     if(has(s,"guide me","where do i start","where should i start","don't know where","dont know where","what should i do","what do i study","show me what","available on this site")){
       return [
-        {label:"PCTH • Week 1",href:"pcth.html#w1"},
-        {label:"PCTH • Week 2",href:"pcth.html#w2"},
-        {label:"PHRM • Week 1",href:"phrm.html"},
+        {label:"Learn • PCTH Week 1",href:"learn.html?deck=pcth-w1"},
+        {label:"Learn • PCTH Week 2",href:"learn.html?deck=pcth-w2"},
+        {label:"Learn • PHRM Week 1",href:"learn.html?deck=phrm-sga"},
         {label:"Open Test Center",href:"test.html"}
       ];
     }
@@ -155,19 +155,23 @@
     if(!explicit)return null;
 
     if(pcthWeek(s,2)){
+      if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PCTH Week 2 • Learn",href:"learn.html?deck=pcth-w2"};
       if(has(s,"89","mastery","full exam")) return {label:"PCTH Week 2 • 89-Q Mastery Exam",href:MASTERY_W2,external:true};
       if(has(s,"quiz","test","questions")) return {label:"PCTH Week 2 • Standard 10",href:"test.html?class=pcth&material=pcth-w2&length=10&start=1"};
       return {label:"PCTH Week 2",href:"pcth.html#w2"};
     }
     if(pcthWeek(s,1)){
+      if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PCTH Week 1 • Learn",href:"learn.html?deck=pcth-w1"};
       if(has(s,"quiz","test","questions")) return {label:"PCTH Week 1 • Standard 10",href:"test.html?class=pcth&material=pcth-w1&length=10&start=1"};
       return {label:"PCTH Week 1",href:"pcth.html#w1"};
     }
     if(phrm(s)&&has(s,"sga","supraglottic","i-gel","igel","airway")){
+      if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM • SGA Learn",href:"learn.html?deck=phrm-sga"};
       if(has(s,"quiz","test","questions")) return {label:"PHRM • SGA Quiz",href:"test.html?class=phrm&material=phrm-sga&length=10&start=1"};
       return {label:"PHRM • SGA Directive",href:"phrm.html#sga"};
     }
     if(phrm(s)&&has(s,"cardiac arrest","mca","pea","vf","vt","tor")){
+      if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM • Cardiac Arrest Learn",href:"learn.html?deck=phrm-mca"};
       if(has(s,"quiz","test","questions")) return {label:"PHRM • Cardiac Arrest Quiz",href:"test.html?class=phrm&material=phrm-mca&length=10&start=1"};
       return {label:"PHRM • Cardiac Arrest",href:"phrm.html#mca"};
     }
