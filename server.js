@@ -12,7 +12,7 @@ app.use((req,res,next)=>{
   next();
 });
 app.get("/",(_,res)=>res.json({ok:true,service:"Arman"}));
-app.get("/health",(_,res)=>res.json({ok:true}));
+app.get("/health",(_,res)=>res.json({ok:true,configured:Boolean(process.env.OPENAI_API_KEY),model:process.env.OPENAI_MODEL||null}));
 app.post("/api/chat",async(req,res)=>{
   try{
     if(!process.env.OPENAI_API_KEY){
