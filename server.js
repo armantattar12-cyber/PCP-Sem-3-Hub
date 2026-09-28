@@ -13,7 +13,7 @@ app.use((req,res,next)=>{
 });
 app.get("/",(_,res)=>res.json({ok:true,service:"Arman"}));
 app.get("/health",(_,res)=>res.json({ok:true,configured:Boolean(process.env.OPENAI_API_KEY),model:process.env.OPENAI_MODEL||null}));
-app.post("/api/chat",async(req,res)=>{
+app.post("/api/chat",async(req,res)=>{\n  console.log("Arman chat request received | origin:",req.headers.origin||"none");
   try{
     if(!process.env.OPENAI_API_KEY){
       return res.status(503).json({error:"Arman is installed but needs one-time API activation."});
@@ -78,7 +78,7 @@ async function openAISelfTest(){
     const r=await fetch("https://api.openai.com/v1/responses",{
       method:"POST",
       headers:{"Authorization":"Bearer "+process.env.OPENAI_API_KEY,"Content-Type":"application/json"},
-      body:JSON.stringify({model,input:"Reply with exactly: OK",max_output_tokens:8})
+      body:JSON.stringify({model,input:"Reply with exactly: OK",max_output_tokens:16})
     });
     const j=await r.json().catch(()=>({}));
     if(r.ok){
