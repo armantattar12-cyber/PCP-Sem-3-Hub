@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1300" viewBox="0 0 1400 1300">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#162230}.title{font-size:50px;font-weight:800;fill:#0b82c6}.kicker{font-size:24px;font-weight:700;fill:#687887}.h{font-size:29px;font-weight:800;fill:#0b82c6}.bar{fill:#064b70}.bartext{font-size:22px;font-weight:800;fill:#fff}.lab{font-size:20px;font-weight:800}.v{font-size:20px}.small{font-size:18px;fill:#334657}.row{fill:#c8e9f8}.white{fill:#fff}.line{stroke:#1b3140;stroke-width:2}.accent{stroke:#f06b2b;stroke-width:6;stroke-linecap:round}
+</style>
+<rect width="1400" height="1300" rx="28" fill="#fff"/>
+<text x="70" y="86" class="kicker">ALS PCS 5.4 • June 2, 2025 • PHRM 208 Week 2</text>
+<text x="70" y="154" class="title">Return of Spontaneous Circulation (ROSC) Medical Directive</text>
+<line x1="70" y1="185" x2="1330" y2="185" class="accent"/>
+<text x="70" y="245" class="h">Indications</text>
+<text x="70" y="287" class="v">Patient with return of spontaneous circulation (ROSC) after the resuscitation was initiated.</text>
+
+<text x="70" y="365" class="h">Conditions</text>
+<rect x="70" y="395" width="620" height="55" class="bar"/><text x="250" y="432" class="bartext">0.9% NaCl Fluid Bolus</text>
+<rect x="70" y="450" width="620" height="55" class="white"/><text x="90" y="486" class="lab">Age</text><text x="340" y="486" class="v">≥ 2 years</text>
+<rect x="70" y="505" width="620" height="55" class="row"/><text x="90" y="541" class="lab">LOA / HR / RR</text><text x="340" y="541" class="v">N/A</text>
+<rect x="70" y="560" width="620" height="55" class="white"/><text x="90" y="596" class="lab">SBP</text><text x="340" y="596" class="v">Hypotension</text>
+<rect x="70" y="615" width="620" height="70" class="row"/><text x="90" y="657" class="lab">Other</text><text x="340" y="657" class="v">Chest auscultation is clear</text>
+
+<text x="760" y="365" class="h">Contraindications</text>
+<rect x="760" y="395" width="570" height="55" class="bar"/><text x="925" y="432" class="bartext">0.9% NaCl Fluid Bolus</text>
+<text x="780" y="500" class="v">Fluid overload</text>
+<line x1="760" y1="525" x2="1330" y2="525" class="line"/>
+
+<text x="70" y="775" class="h">Treatment</text>
+<rect x="70" y="805" width="1260" height="52" class="bar"/><text x="90" y="840" class="bartext">Consider optimizing ventilation and oxygenation</text>
+<text x="90" y="895" class="v">Titrate oxygenation 94–98%</text>
+<text x="90" y="932" class="v">Avoid hyperventilation and target ETCO₂ 30–40 mmHg with continuous waveform capnography (if available)</text>
+
+<rect x="70" y="980" width="1260" height="52" class="bar"/><text x="90" y="1015" class="bartext">Consider 0.9% NaCl fluid bolus (if available and authorized)</text>
+<text x="90" y="1065" class="lab">Age ≥2 to &lt;12 years</text><text x="745" y="1065" class="lab">Age ≥12 years</text>
+<text x="90" y="1108" class="v">IV • 10 mL/kg • immediate • reassess every 100 mL • max 1000 mL</text>
+<text x="745" y="1108" class="v">IV • 10 mL/kg • immediate • reassess every 250 mL • max 1000 mL</text>
+<rect x="70" y="1150" width="1260" height="52" class="bar"/><text x="90" y="1185" class="bartext">Consider 12-lead ECG acquisition and interpretation</text>
+<text x="70" y="1250" class="small">Clinical consideration: consider initiating transport in parallel with the above treatment. IV fluid bolus applies only to PCPs authorized for PCP Autonomous IV.</text>
+</svg>
