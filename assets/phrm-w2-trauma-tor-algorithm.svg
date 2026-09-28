@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1080" viewBox="0 0 1400 1080">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#17232d}.title{font-size:48px;font-weight:800;fill:#0b82c6}.k{font-size:22px;font-weight:700;fill:#667984}.box{fill:#fff;stroke:#304552;stroke-width:2}.decision{fill:#fff;stroke:#304552;stroke-width:2}.t{font-size:20px}.b{font-size:20px;font-weight:800}.hint{font-size:18px;fill:#334657}.blue{fill:#dff4fb;stroke:#62a8c8;stroke-width:2}.arrow{stroke:#2b3d47;stroke-width:3;fill:none;marker-end:url(#a)}
+</style>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2b3d47"/></marker></defs>
+<rect width="1400" height="1080" rx="28" fill="#fdfefe"/>
+<text x="70" y="80" class="title">Trauma Arrest • TOR Algorithm Snapshot</text>
+<text x="70" y="120" class="k">Recreated directly from the Week 2 lecture algorithm</text>
+
+<rect x="80" y="165" width="320" height="90" rx="14" class="box"/><text x="105" y="205" class="b">Cardiac arrest secondary to</text><text x="105" y="236" class="t">severe blunt or penetrating trauma</text>
+<path d="M400 210 H505" class="arrow"/>
+<polygon points="510,210 630,145 750,210 630,275" class="decision"/><text x="548" y="192" class="t">Obviously dead</text><text x="548" y="220" class="t">or DNR criteria?</text>
+<path d="M750 210 H905" class="arrow"/><text x="810" y="190" class="hint">Yes</text>
+<rect x="910" y="165" width="250" height="90" rx="14" class="box"/><text x="965" y="220" class="b">Follow BLS PCS</text>
+
+<path d="M630 275 V345" class="arrow"/><text x="650" y="318" class="hint">No</text>
+<rect x="475" y="350" width="310" height="85" rx="14" class="box"/><text x="515" y="388" class="b">CPR throughout call</text><text x="515" y="417" class="t">Apply pads if age ≥24 h</text>
+
+<rect x="850" y="335" width="445" height="125" rx="14" class="blue"/><text x="875" y="372" class="b">Simultaneously address reversible causes</text><text x="875" y="404" class="t">Hypovolemia: control external hemorrhage,</text><text x="875" y="433" class="t">splint pelvis/fractures • Oxygenation: correct hypoxia</text>
+
+<path d="M630 435 V505" class="arrow"/>
+<polygon points="510,550 630,492 750,550 630,608" class="decision"/><text x="565" y="558" class="b">Determine rhythm</text>
+
+<path d="M510 550 H300" class="arrow"/><rect x="95" y="510" width="200" height="80" rx="14" class="box"/><text x="160" y="558" class="b">Asystole</text>
+<path d="M750 550 H970" class="arrow"/><rect x="975" y="510" width="230" height="80" rx="14" class="box"/><text x="1030" y="542" class="b">VF / pVT</text><text x="1030" y="570" class="t">(shockable)</text>
+<path d="M630 608 V670" class="arrow"/><rect x="520" y="675" width="220" height="80" rx="14" class="box"/><text x="570" y="710" class="b">PEA</text><text x="555" y="740" class="t">No shock</text>
+<path d="M1090 590 V675" class="arrow"/><rect x="975" y="680" width="230" height="80" rx="14" class="box"/><text x="1018" y="728" class="b">Defibrillation ×1</text>
+
+<path d="M195 590 V680" class="arrow"/>
+<polygon points="70,740 195,680 320,740 195,800" class="decision"/><text x="98" y="725" class="t">Penetrating torso/head/neck</text><text x="105" y="754" class="t">AND lead trauma hospital</text><text x="138" y="782" class="t">&lt;30 min away?</text>
+
+<path d="M195 800 V850" class="arrow"/><text x="215" y="830" class="hint">No</text>
+<polygon points="75,900 195,850 315,900 195,950" class="decision"/><text x="130" y="907" class="b">Age ≥16?</text>
+<path d="M195 950 V990" class="arrow"/><text x="215" y="975" class="hint">Yes</text>
+<polygon points="370,920 500,860 630,920 500,980" class="decision"/><text x="438" y="928" class="b">Signs of life?</text>
+<path d="M630 920 H785" class="arrow"/><text x="680" y="900" class="hint">No</text>
+<rect x="790" y="875" width="180" height="90" rx="14" class="box"/><text x="850" y="928" class="b">PATCH</text>
+<path d="M970 920 H1080" class="arrow"/>
+<polygon points="1085,920 1185,870 1285,920 1185,970" class="decision"/><text x="1125" y="928" class="b">TOR granted?</text>
+<text x="70" y="1040" class="hint">Lecture flow: shockable rhythm / signs of life / age &lt;16 / qualifying penetrating trauma / short transport time → transport. No qualifying factors → patch for TOR.</text>
+</svg>
