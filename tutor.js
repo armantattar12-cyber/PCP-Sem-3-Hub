@@ -49,6 +49,19 @@
         special:{label:"special arrest considerations",cards:["pedbrady","preg","opioid"]},
         directives:{label:"DNR / TOR / reversible causes",cards:["dnr","tor","reversible"]}
       }
+    },
+    "phrm-w2":{
+      label:"PHRM Week 2",total:46,quizKey:"phrm-w2",
+      learn:"learn.html?deck=phrm-w2",
+      quiz:"test.html?class=phrm&material=phrm-w2&length=10&start=1",
+      topics:{
+        trauma:{label:"trauma physiology & priorities",cards:["ftt-priority","ftt-close-ed","diamond","acidosis","hypothermia","coagulopathy","hypocalcemia","normal-saline"]},
+        txa:{label:"TXA & hemostasis",cards:["crash2-purpose","crash2-pop","crash2-time","txa-class","txa-moa","hemostasis1","hemostasis2","hemostasis3","hemostasis4","txa-stage","txa-ae"]},
+        hemorrhage:{label:"Traumatic Hemorrhage directive",cards:["hem-indication","hem-age","hem-hemo","hem-contra-time","hem-contra-head","txa-dose","txa-iv","txa-im","txa-transport","txa-internal"]},
+        "trauma-arrest":{label:"Traumatic Cardiac Arrest",cards:["txa-vsa","trauma-vsa-causes","tca-indication","tca-cpr","tca-defib","tca-peddefib","signs-life"]},
+        "trauma-tor":{label:"Trauma TOR",cards:["tor-core","tor-contra"]},
+        rosc:{label:"ROSC care",cards:["rosc-indication","rosc-o2","rosc-etco2","rosc-fluid","rosc-reassess","rosc-map","rosc-12lead","rosc-checklist"]}
+      }
     }
   };
 
@@ -75,6 +88,14 @@
       cpr:["mcaq6","mcaq7","mcaq8","mcaq15"],
       special:["mcaq9","mcaq10","mcaq13","mcaq14"],
       directives:["mcaq11","mcaq12","mcaq16","mcaq17","mcaq19"]
+    },
+    "phrm-w2":{
+      trauma:["p2q1","p2q2","p2q3","p2q4","p2q5","p2q6","p2q7","p2q8"],
+      txa:["p2q9","p2q10","p2q11","p2q12","p2q13","p2q14","p2q15"],
+      hemorrhage:["p2q16","p2q17","p2q18","p2q19","p2q20","p2q21","p2q22","p2q23","p2q24","p2q25","p2q26"],
+      "trauma-arrest":["p2q27","p2q28","p2q29","p2q30","p2q31","p2q32","p2q34"],
+      "trauma-tor":["p2q33","p2q34"],
+      rosc:["p2q35","p2q36","p2q37","p2q38","p2q39","p2q40","p2q41","p2q42","p2q43","p2q44"]
     }
   };
 
@@ -134,6 +155,7 @@
       return "pcth-w2";
     }
     if(location.pathname.endsWith("/phrm.html")){
+      if(location.hash==="#w2")return "phrm-w2";
       if(location.hash==="#mca")return "phrm-mca";
       return "phrm-sga";
     }
@@ -316,12 +338,14 @@
   function pageContext(){
     const clone=document.body.cloneNode(true);
     clone.querySelectorAll(".tutor-wrap,script,style,nav,header.top,footer").forEach(x=>x.remove());
-    return (document.title+"\n"+clone.innerText).replace(/\s+/g," ").slice(0,14000);
+    return (document.title+"\n"+clone.innerText).replace(/\s+/g," ").slice(0,24000);
   }
 
   function has(s,...xs){return xs.some(x=>s.includes(x))}
   function pcthWeek(s,n){return has(s,"pcth","patient care theory") && (s.includes("week "+n)||s.includes("week"+n)||s.includes("w"+n));}
   function phrm(s){return has(s,"phrm","pharm","pharmacology");}
+  function phrmWeek(s,n){return phrm(s)&&(s.includes("week "+n)||s.includes("week"+n)||s.includes("w"+n));}
+  function phrmW2Topic(s){return has(s,"txa","tranexamic","traumatic hemorrhage","trauma hemorrhage","traumatic cardiac arrest","trauma cardiac arrest","trauma tor","rosc","return of spontaneous circulation","lethal diamond","hypocalcemia","coagulopathy");}
 
   function guideActions(q){
     const s=String(q||"").toLowerCase();
@@ -337,6 +361,13 @@
       return [
         {label:"Learn • PCTH Week 1",href:"learn.html?deck=pcth-w1"},
         {label:"Start • Standard 10",href:"test.html?class=pcth&material=pcth-w1&length=10&start=1"}
+      ];
+    }
+    if(phrmWeek(s,2)||phrmW2Topic(s)){
+      return [
+        {label:"Learn • PHRM Week 2",href:"learn.html?deck=phrm-w2"},
+        {label:"Start • Week 2 Quiz",href:"test.html?class=phrm&material=phrm-w2&length=10&start=1"},
+        {label:"Open • Week 2 Review",href:"phrm.html#w2"}
       ];
     }
     if(phrm(s)&&has(s,"sga","supraglottic","i-gel","igel","airway")){
@@ -363,6 +394,7 @@
         {label:"Learn • PCTH Week 1",href:"learn.html?deck=pcth-w1"},
         {label:"Learn • PCTH Week 2",href:"learn.html?deck=pcth-w2"},
         {label:"Learn • PHRM Week 1",href:"learn.html?deck=phrm-sga"},
+        {label:"Learn • PHRM Week 2",href:"learn.html?deck=phrm-w2"},
         {label:"Open Test Center",href:"test.html"}
       ];
     }
@@ -387,6 +419,19 @@
       if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PCTH Week 1 • Learn",href:"learn.html?deck=pcth-w1"};
       if(has(s,"quiz","test","questions")) return {label:"PCTH Week 1 • Standard 10",href:"test.html?class=pcth&material=pcth-w1&length=10&start=1"};
       return {label:"PCTH Week 1",href:"pcth.html#w1"};
+    }
+    if(phrmWeek(s,2)||phrmW2Topic(s)){
+      let topic="";
+      if(has(s,"txa","tranexamic","hemostasis"))topic="txa";
+      else if(has(s,"hemorrhage","bleeding"))topic="hemorrhage";
+      else if(has(s,"trauma tor"))topic="trauma-tor";
+      else if(has(s,"rosc","return of spontaneous circulation"))topic="rosc";
+      else if(has(s,"traumatic cardiac arrest","trauma cardiac arrest"))topic="trauma-arrest";
+      else if(has(s,"lethal diamond","hypocalcemia","coagulopathy","hypothermia","acidosis"))topic="trauma";
+      const suffix=topic?"&topic="+encodeURIComponent(topic):"";
+      if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM Week 2 • Learn",href:"learn.html?deck=phrm-w2"+suffix};
+      if(has(s,"quiz","test","questions")) return {label:"PHRM Week 2 • Quiz",href:"test.html?class=phrm&material=phrm-w2&length=10"+suffix+"&start=1"};
+      return {label:"PHRM Week 2",href:"phrm.html#w2"};
     }
     if(phrm(s)&&has(s,"sga","supraglottic","i-gel","igel","airway")){
       if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM • SGA Learn",href:"learn.html?deck=phrm-sga"};
