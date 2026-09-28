@@ -219,7 +219,7 @@
       <header class="tutor-head">
         <div>
           <div class="tutor-title"><span class="tutor-dot"></span>Arman</div>
-          <div class="tutor-sub">Control layer • knows this browser’s Learn + Test progress</div>
+          <div class="tutor-sub">Tutor + guide • uses your progress when it helps</div>
         </div>
         <div class="tutor-head-actions">
           <button id="tutorClear" title="Clear chat">↺</button>
@@ -285,26 +285,21 @@
   }
 
   function addPlan(plan,state){
-    const box=document.createElement("div");
-    box.className="tutor-plan";
     const reason=plan.weak
-      ?"Your strongest saved weakness is **"+plan.topicLabel+"**."
-      :"I don't have a strong weakness signal yet, so I'm using your current/recent material.";
-    box.innerHTML='<div class="tutor-plan-head"><span>✦ SMART STUDY PLAN</span><b>'+plan.minutes+' min • '+esc(plan.deckLabel)+'</b><p>'+renderText(reason)+'</p></div>'+
-      '<div class="tutor-plan-steps">'+plan.steps.map((s,i)=>
-        '<div class="tutor-plan-step"><span class="plan-time">'+s.mins+'m</span><div><b>'+(i+1)+'. '+esc(s.title)+'</b><small>'+esc(s.desc)+'</small></div></div>'
-      ).join("")+'</div>'+
-      '<div class="tutor-plan-source">Built from Learn/Test progress saved in this browser.</div>';
-    messages.appendChild(box);
-    plan.steps.forEach(s=>addActions([s.action]));
-    messages.scrollTop=messages.scrollHeight;
+      ?"Your saved progress points to **"+plan.topicLabel+"**."
+      :"I don't have enough misses yet to call a true weak area, so I'm using your current/recent material.";
+    const steps=plan.steps.slice(0,3);
+    const summary=reason+"\n\n**"+plan.minutes+" min:** "+
+      steps.map(s=>s.mins+" min "+s.title.toLowerCase()).join(" → ")+".";
+    add("assistant",summary);
+    addActions(steps.map(s=>s.action));
   }
 
   function renderHistory(){
     messages.innerHTML="";
     if(!history.length){
       const state=getStudyState();
-      add("assistant","I’m **Arman** — your semester control layer. I can read the Learn and Test progress saved in this browser, spot weak areas, and launch the exact next task.\n\n**"+progressLine(state)+"**\n\nTry: **I have 45 minutes. What should I do?**",false);
+      add("assistant","I’m **Arman**. I can teach, quiz you, and use the Learn/Test progress saved in this browser when you ask what to work on.\n\n**"+progressLine(state)+"**\n\nTry: **I have 45 minutes. What should I do?**",false);
     }else history.forEach(x=>add(x.role,x.text,false));
   }
 
@@ -427,7 +422,6 @@
     if(planIntent(q)){
       const mins=parseMinutes(q)||30;
       const plan=buildStudyPlan(mins,state);
-      add("assistant",(plan.weak?"Based on what you've marked wrong or **Still learning**, I'd attack **"+plan.topicLabel+"** first.":"I don't have enough misses yet to call a true weak area, so I'm using your current/recent material.")+" Here’s the highest-value **"+plan.minutes+"-minute** block.");
       addPlan(plan,state);
       return;
     }
