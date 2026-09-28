@@ -2,6 +2,207 @@
   const API="https://pcp-sem-3-tutor.onrender.com/api/chat";
   const KEY="pcpTutorHistory.v1";
   const MASTERY_W2="https://pcth-308-week-2-mastery-quiz.lovable.app";
+  const CONTROL_META={
+    "pcth-w1":{
+      label:"PCTH Week 1",total:23,quizKey:"pcth-w1",
+      learn:"learn.html?deck=pcth-w1",
+      quiz:"test.html?class=pcth&material=pcth-w1&length=10&start=1",
+      topics:{
+        cells:{label:"cardiac cell properties",cards:["auto","excite","conduct","contract","refract","chrono","ino","dromo","symp","para"]},
+        pacemakers:{label:"pacemaker hierarchy",cards:["sa-rate","av-rate","vent-rate"]},
+        conduction:{label:"conduction & AV delay",cards:["path","avdelay"]},
+        electrical:{label:"depolarization & refractory periods",cards:["depol","repol","absref","relref"]},
+        ecg:{label:"ECG fundamentals",cards:["paper","ecg","qrs","twave"]}
+      }
+    },
+    "pcth-w2":{
+      label:"PCTH Week 2",total:27,quizKey:"pcth-w2",
+      learn:"learn.html?deck=pcth-w2",
+      quiz:"test.html?class=pcth&material=pcth-w2&length=10&start=1",
+      mastery:MASTERY_W2,
+      topics:{
+        sinus:{label:"sinus rhythms",cards:["nsr","sb","st","sa","exit","arrest"]},
+        junctional:{label:"junctional rhythms",cards:["pjc","jeb","jer","ajr","jt"]},
+        atrial:{label:"atrial rhythms",cards:["pac","af","flutter","wap","mat"]},
+        svt:{label:"SVT / WPW",cards:["avnrt","avrt","wpw"]},
+        "av-blocks":{label:"AV blocks",cards:["first","m1","m2","2to1","third"]},
+        arrest:{label:"PEA / shockability",cards:["pea","shock"]},
+        framework:{label:"rhythm interpretation framework",cards:["framework"]}
+      }
+    },
+    "phrm-sga":{
+      label:"PHRM SGA",total:10,quizKey:"phrm-sga",
+      learn:"learn.html?deck=phrm-sga",
+      quiz:"test.html?class=phrm&material=phrm-sga&length=10&start=1",
+      topics:{
+        airway:{label:"SGA indications & placement",cards:["purpose","igel","attempts","confirm","capno","source"]},
+        ventilation:{label:"advanced-airway ventilation",cards:["cpr","adultvent","pedvent","volume"]}
+      }
+    },
+    "phrm-mca":{
+      label:"PHRM Cardiac Arrest",total:14,quizKey:"phrm-mca",
+      learn:"learn.html?deck=phrm-mca",
+      quiz:"test.html?class=phrm&material=phrm-mca&length=10&start=1",
+      topics:{
+        rhythms:{label:"arrest rhythm recognition",cards:["shockable","nonshock","pea","vtpulse","ecg"]},
+        cpr:{label:"CPR / ventilation",cards:["vent","hyper","etco2"]},
+        special:{label:"special arrest considerations",cards:["pedbrady","preg","opioid"]},
+        directives:{label:"DNR / TOR / reversible causes",cards:["dnr","tor","reversible"]}
+      }
+    }
+  };
+
+  const QUIZ_TOPIC_IDS={
+    "pcth-w1":{
+      cells:["w1q1","w1q2","w1q3","w1q4","w1q5","w1q8","w1q9","w1q10"],
+      conduction:["w1q6","w1q7"],
+      electrical:["w1q16","w1q17"],
+      ecg:["w1q11","w1q12","w1q13","w1q14","w1q15","w1q18","w1q19","w1q20"]
+    },
+    "pcth-w2":{
+      sinus:["w2q1","w2q2","w2q3","w2q4","w2q5"],
+      junctional:["w2q6","w2q7"],
+      atrial:["w2q8","w2q9","w2q10","w2q11","w2q12"],
+      svt:["w2q13","w2q14","w2q15"],
+      "av-blocks":["w2q16","w2q17","w2q18","w2q19","w2q20"]
+    },
+    "phrm-sga":{
+      airway:["sgaq1","sgaq2","sgaq7","sgaq8","sgaq9","sgaq10","sgaq11","sgaq12"],
+      ventilation:["sgaq3","sgaq4","sgaq5","sgaq6"]
+    },
+    "phrm-mca":{
+      rhythms:["mcaq1","mcaq2","mcaq3","mcaq4","mcaq5","mcaq18","mcaq20"],
+      cpr:["mcaq6","mcaq7","mcaq8","mcaq15"],
+      special:["mcaq9","mcaq10","mcaq13","mcaq14"],
+      directives:["mcaq11","mcaq12","mcaq16","mcaq17","mcaq19"]
+    }
+  };
+
+  function safeJSON(key,fallback){
+    try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback))}catch(e){return fallback}
+  }
+
+  function getStudyState(){
+    const learn=safeJSON("pcpLearnProgress.v1",{});
+    const attempts=safeJSON("pcpQuizAttempts.v1",[]);
+    const decks={};
+    const weakness={};
+
+    Object.entries(CONTROL_META).forEach(([id,m])=>{
+      const l=learn[id]||{};
+      const known=Array.isArray(l.known)?l.known:[];
+      const learning=Array.isArray(l.learning)?l.learning:[];
+      const recentAttempts=(Array.isArray(attempts)?attempts:[]).filter(a=>a&&a.key===m.quizKey).slice(0,8);
+      const latest=recentAttempts[0]||null;
+      decks[id]={
+        label:m.label,total:m.total,known:known.length,learning:learning.length,
+        unreviewed:Math.max(0,m.total-known.length-learning.length),
+        latestQuiz:latest?{pct:latest.pct,score:latest.score,total:latest.total,date:latest.date}:null,
+        updated:l.updated||null
+      };
+
+      Object.entries(m.topics).forEach(([slug,t])=>{
+        const k=id+"::"+slug;
+        let score=0;
+        learning.forEach(card=>{if(t.cards.includes(card))score+=2});
+        recentAttempts.forEach((a,idx)=>{
+          const ids=((QUIZ_TOPIC_IDS[id]||{})[slug]||[]);
+          (a.wrong||[]).forEach(q=>{if(ids.includes(q))score+=Math.max(1,3-idx*.25)});
+        });
+        if(score>0) weakness[k]={deck:id,topic:slug,label:t.label,score:Math.round(score*10)/10};
+      });
+    });
+
+    const weakAreas=Object.values(weakness).sort((a,b)=>b.score-a.score).slice(0,6);
+    const latestQuiz=(Array.isArray(attempts)?attempts:[])[0]||null;
+    const totals=Object.values(decks).reduce((a,d)=>({
+      known:a.known+d.known,learning:a.learning+d.learning,total:a.total+d.total
+    }),{known:0,learning:0,total:0});
+
+    return {decks,weakAreas,latestQuiz,totals,source:"browser-local Learn + Test history"};
+  }
+
+  function preferredDeck(state){
+    const p=new URLSearchParams(location.search);
+    if(location.pathname.endsWith("/learn.html")&&CONTROL_META[p.get("deck")])return p.get("deck");
+    if(location.pathname.endsWith("/test.html")){
+      const mat=p.get("material");
+      if(CONTROL_META[mat])return mat;
+    }
+    if(location.pathname.endsWith("/pcth.html")){
+      if(location.hash==="#w1")return "pcth-w1";
+      return "pcth-w2";
+    }
+    if(location.pathname.endsWith("/phrm.html")){
+      if(location.hash==="#mca")return "phrm-mca";
+      return "phrm-sga";
+    }
+    if(state.latestQuiz&&CONTROL_META[state.latestQuiz.key])return state.latestQuiz.key;
+    const updated=Object.entries(state.decks)
+      .filter(([,d])=>d.updated)
+      .sort((a,b)=>String(b[1].updated).localeCompare(String(a[1].updated)));
+    return updated[0]?.[0]||"pcth-w1";
+  }
+
+  function parseMinutes(q){
+    const s=String(q||"").toLowerCase();
+    let m=s.match(/(\d{1,3})\s*(?:min|mins|minute|minutes)\b/);
+    if(m)return Math.max(5,Math.min(180,+m[1]));
+    m=s.match(/(\d(?:\.\d)?)\s*(?:hour|hours|hr|hrs)\b/);
+    if(m)return Math.max(5,Math.min(180,Math.round(+m[1]*60)));
+    if(/half (?:an )?hour/.test(s))return 30;
+    if(/an hour|one hour/.test(s))return 60;
+    return null;
+  }
+
+  function planIntent(q){
+    const s=String(q||"").toLowerCase();
+    return parseMinutes(q)!==null || /plan my study|what should i (?:study|do)|what do i study|build me a study|how should i study right now|what should i work on/.test(s);
+  }
+
+  function topicQuizHref(deckId,topic,minutes){
+    const meta=CONTROL_META[deckId];
+    const ids=((QUIZ_TOPIC_IDS[deckId]||{})[topic]||[]);
+    const n=Math.min(ids.length,minutes<25?5:10);
+    const cls=deckId.startsWith("pcth")?"pcth":"phrm";
+    return "test.html?class="+cls+"&material="+meta.quizKey+"&length="+(n||5)+"&topic="+encodeURIComponent(topic)+"&start=1";
+  }
+
+  function buildStudyPlan(minutes,state){
+    const deckId=(state.weakAreas[0]&&state.weakAreas[0].deck)||preferredDeck(state);
+    const meta=CONTROL_META[deckId];
+    const topWeak=state.weakAreas.find(w=>w.deck===deckId)||null;
+    const topic=topWeak?topWeak.topic:Object.keys(meta.topics)[0];
+    const topicLabel=topWeak?topWeak.label:meta.topics[topic].label;
+    const topicCount=((QUIZ_TOPIC_IDS[deckId]||{})[topic]||[]).length;
+    const m=Math.max(10,minutes||30);
+
+    let learnM,quizM,drillM,reviewM;
+    if(m<=20){learnM=Math.max(5,Math.round(m*.4));quizM=Math.max(5,Math.round(m*.35));drillM=Math.max(3,m-learnM-quizM);reviewM=0}
+    else if(m<=45){learnM=Math.round(m*.28);quizM=Math.round(m*.32);drillM=Math.round(m*.25);reviewM=m-learnM-quizM-drillM}
+    else{learnM=Math.round(m*.25);quizM=Math.round(m*.30);drillM=Math.round(m*.25);reviewM=m-learnM-quizM-drillM}
+
+    const hasWeak=!!topWeak;
+    const learnHref=meta.learn+(hasWeak?"&mode=weak&topic="+encodeURIComponent(topic):"&topic="+encodeURIComponent(topic));
+    const quizHref=topicCount?topicQuizHref(deckId,topic,m):meta.quiz;
+    const steps=[
+      {mins:learnM,title:"Repair "+topicLabel,desc:hasWeak?"Start with the concepts this browser has marked weak.":"Build recall on this topic first.",action:{label:"Open focused Learn",href:learnHref}},
+      {mins:quizM,title:(topicCount?Math.min(topicCount,m<25?5:10):10)+"-question check",desc:"Test the same area before moving on.",action:{label:"Start targeted quiz",href:quizHref}},
+      {mins:drillM,title:"Arman discrimination drill",desc:"Three one-at-a-time cases/questions that force you to explain the difference.",action:{label:"Start 3-case drill",prompt:"Run a 3-question discrimination drill on "+meta.label+" — "+topicLabel+". Ask one question at a time, make me commit to an answer, then explain the discriminator before moving on."}}
+    ];
+    if(reviewM>0){
+      steps.push({mins:reviewM,title:"Close the loop",desc:"Return only to misses, then finish with a teach-back.",action:{label:"Teach-back with Arman",prompt:"Make me teach back "+topicLabel+" from memory. Grade my explanation for missing or inaccurate points, but do not give me the answer before I try."}});
+    }
+
+    return {minutes:m,deckId,deckLabel:meta.label,topic,topicLabel,weak:hasWeak,steps};
+  }
+
+  function progressLine(state){
+    const d=state.decks[preferredDeck(state)];
+    if(!d)return "Progress tracking ready";
+    const quiz=d.latestQuiz?" • latest quiz "+d.latestQuiz.pct+"%":"";
+    return d.label+": "+d.known+"/"+d.total+" known • "+d.learning+" learning"+quiz;
+  }
 
   let history=[];
   try{history=JSON.parse(localStorage.getItem(KEY)||"[]")}catch(e){history=[]}
@@ -18,7 +219,7 @@
       <header class="tutor-head">
         <div>
           <div class="tutor-title"><span class="tutor-dot"></span>Arman</div>
-          <div class="tutor-sub">Tutor + guide • learn, quiz, or jump to the right material</div>
+          <div class="tutor-sub">Control layer • knows this browser’s Learn + Test progress</div>
         </div>
         <div class="tutor-head-actions">
           <button id="tutorClear" title="Clear chat">↺</button>
@@ -26,6 +227,8 @@
         </div>
       </header>
       <div class="tutor-quick">
+        <button data-q="I have 45 minutes. What should I do?">Plan 45 min</button>
+        <button data-q="What are my weakest areas right now based on my saved progress?">Weak areas</button>
         <button data-q="I don't know where to start. Guide me through the study material available on this site and give me the best next step.">Guide me</button>
         <button data-q="Explain the key ideas on this page simply, but do not leave out testable details.">Explain this</button>
         <button data-q="Quiz me on this page one question at a time. Do not reveal the answer until I respond.">Quiz me</button>
@@ -33,7 +236,7 @@
       </div>
       <div class="tutor-messages" id="tutorMessages"></div>
       <form class="tutor-form" id="tutorForm">
-        <textarea id="tutorInput" rows="1" placeholder="Try: I want to learn PCTH Week 2…" autocomplete="off"></textarea>
+        <textarea id="tutorInput" rows="1" placeholder="Try: I have 45 minutes. What should I do?" autocomplete="off"></textarea>
         <button type="submit" id="tutorSend" aria-label="Send">↑</button>
       </form>
       <div class="tutor-note">Study aid only • verify exact directive wording in current Ontario standards.</div>
@@ -63,21 +266,45 @@
     const row=document.createElement("div");
     row.className="tutor-actions";
     actions.forEach(a=>{
-      const link=document.createElement("a");
-      link.className="tutor-action";
-      link.href=a.href;
-      link.textContent=a.label;
-      if(a.external){link.target="_blank";link.rel="noopener"}
-      row.appendChild(link);
+      let el;
+      if(a.prompt){
+        el=document.createElement("button");
+        el.type="button";
+        el.onclick=()=>sendMessage(a.prompt);
+      }else{
+        el=document.createElement("a");
+        el.href=a.href;
+        if(a.external){el.target="_blank";el.rel="noopener"}
+      }
+      el.className="tutor-action";
+      el.textContent=a.label;
+      row.appendChild(el);
     });
     messages.appendChild(row);
+    messages.scrollTop=messages.scrollHeight;
+  }
+
+  function addPlan(plan,state){
+    const box=document.createElement("div");
+    box.className="tutor-plan";
+    const reason=plan.weak
+      ?"Your strongest saved weakness is **"+plan.topicLabel+"**."
+      :"I don't have a strong weakness signal yet, so I'm using your current/recent material.";
+    box.innerHTML='<div class="tutor-plan-head"><span>✦ SMART STUDY PLAN</span><b>'+plan.minutes+' min • '+esc(plan.deckLabel)+'</b><p>'+renderText(reason)+'</p></div>'+
+      '<div class="tutor-plan-steps">'+plan.steps.map((s,i)=>
+        '<div class="tutor-plan-step"><span class="plan-time">'+s.mins+'m</span><div><b>'+(i+1)+'. '+esc(s.title)+'</b><small>'+esc(s.desc)+'</small></div></div>'
+      ).join("")+'</div>'+
+      '<div class="tutor-plan-source">Built from Learn/Test progress saved in this browser.</div>';
+    messages.appendChild(box);
+    plan.steps.forEach(s=>addActions([s.action]));
     messages.scrollTop=messages.scrollHeight;
   }
 
   function renderHistory(){
     messages.innerHTML="";
     if(!history.length){
-      add("assistant","I’m **Arman** — your tutor and study guide. Tell me what you want to learn and I can teach it, quiz you, or take you straight to the right notes/test. Try: **I want to learn PCTH Week 2.**",false);
+      const state=getStudyState();
+      add("assistant","I’m **Arman** — your semester control layer. I can read the Learn and Test progress saved in this browser, spot weak areas, and launch the exact next task.\n\n**"+progressLine(state)+"**\n\nTry: **I have 45 minutes. What should I do?**",false);
     }else history.forEach(x=>add(x.role,x.text,false));
   }
 
@@ -195,6 +422,15 @@
     const route=directRoute(q);
     if(route){navigate(route);return}
 
+    const state=getStudyState();
+    if(planIntent(q)){
+      const mins=parseMinutes(q)||30;
+      const plan=buildStudyPlan(mins,state);
+      add("assistant",(plan.weak?"Based on what you've marked wrong or **Still learning**, I'd attack **"+plan.topicLabel+"** first.":"I don't have enough misses yet to call a true weak area, so I'm using your current/recent material.")+" Here’s the highest-value **"+plan.minutes+"-minute** block.");
+      addPlan(plan,state);
+      return;
+    }
+
     send.disabled=true;
     send.textContent="…";
     const thinking=document.createElement("div");
@@ -212,7 +448,8 @@
           pageTitle:document.title,
           pageUrl:location.href,
           pageContext:pageContext(),
-          history:history.slice(-10)
+          history:history.slice(-10),
+          studyState:getStudyState()
         })
       });
       const j=await r.json().catch(()=>({}));
