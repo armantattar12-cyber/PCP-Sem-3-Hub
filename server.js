@@ -68,5 +68,27 @@ ${String(pageContext||"").slice(0,14000)}`;
     res.json({answer:answer||"I couldn't generate an answer."});
   }catch(e){console.error(e);res.status(500).json({error:"Arman hit a temporary error."})}
 });
+async function openAISelfTest(){
+  if(!process.env.OPENAI_API_KEY){
+    console.log("OpenAI self-test: skipped | key missing");
+    return;
+  }
+  const model=process.env.OPENAI_MODEL||"gpt-5.6-luna";
+  try{
+    const r=await fetch("https://api.openai.com/v1/responses",{
+      method:"POST",
+      headers:{"Authorization":"Bearer "+process.env.OPENAI_API_KEY,"Content-Type":"application/json"},
+      body:JSON.stringify({model,input:"Reply with exactly: OK",max_output_tokens:8})
+    });
+    const j=await r.json().catch(()=>({}));
+    if(r.ok){
+      console.log("OpenAI self-test: success | model:",model);
+    }else{
+      console.log("OpenAI self-test: failed | status:",r.status,"| type:",j?.error?.type||"unknown","| code:",j?.error?.code||"none","| message:",String(j?.error?.message||"unknown").slice(0,300));
+    }
+  }catch(e){
+    console.log("OpenAI self-test: network error |",String(e?.message||e).slice(0,300));
+  }
+}
 const port=process.env.PORT||10000;
-app.listen(port,()=>console.log("Arman listening on",port,"| OpenAI key configured:",Boolean(process.env.OPENAI_API_KEY),"| model:",process.env.OPENAI_MODEL||"default"));
+app.listen(port,()=>{console.log("Arman listening on",port,"| OpenAI key configured:",Boolean(process.env.OPENAI_API_KEY),"| model:",process.env.OPENAI_MODEL||"default");openAISelfTest();});
