@@ -250,10 +250,10 @@ button.tutor-action{appearance:none}
 .directive-mini b{color:#eef9fd}
 .directive-summary .actions{margin-top:12px}
 
-.directive-image-card{display:block;overflow:hidden;border-radius:16px;border:1px solid rgba(97,145,174,.32);background:#f8fbfd;box-shadow:0 18px 50px rgba(0,0,0,.22);transition:.18s}
+.directive-image-card{display:block;overflow:hidden;border-radius:18px;border:1px solid rgba(97,145,174,.34);background:#edf5f8;padding:10px;box-shadow:0 18px 50px rgba(0,0,0,.22);transition:.18s}
 .directive-image-card:hover{transform:translateY(-2px);border-color:rgba(76,217,232,.5);box-shadow:0 22px 60px rgba(0,0,0,.28)}
-.directive-image-card img{display:block;width:100%;height:auto;background:#fff}
-.directive-image-card>span{display:flex;align-items:center;justify-content:flex-end;padding:8px 11px;background:#0a1825;color:#a9c5d5;font-size:8px;font-weight:900;border-top:1px solid rgba(85,124,151,.3)}
+.directive-image-card img{display:block;width:100%;max-width:100%;height:auto!important;max-height:none!important;object-fit:contain!important;object-position:center;background:#fff;border-radius:11px}
+.directive-image-card>span{display:flex;align-items:center;justify-content:center;margin:9px -10px -10px;padding:9px 11px;background:#0a1825;color:#b7cedb;font-size:8px;font-weight:900;border-top:1px solid rgba(85,124,151,.3)}
 .tor-snapshot{grid-template-columns:minmax(250px,.64fr) minmax(0,1.7fr)}
 .directive-source-note{margin:0}
 #w2-directives{scroll-margin-top:82px}
@@ -270,4 +270,14 @@ button.tutor-action{appearance:none}
  .directive-snapshots-head h3{font-size:16px}
  .directive-summary h4{font-size:14px}
  .directive-image-card>span{justify-content:center}
+}
+
+/* Directive image safety: never crop source visuals */
+.directive-image-card,
+.directive-image-card.wide{min-width:0}
+.directive-image-card img,
+.directive-image-card.wide img{clip-path:none!important;transform:none!important}
+@media(max-width:900px){
+  .directive-image-card{padding:8px}
+  .directive-image-card>span{margin:8px -8px -8px}
 }
