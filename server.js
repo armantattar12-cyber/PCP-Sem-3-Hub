@@ -44,7 +44,7 @@ app.post("/api/chat",async(req,res)=>{
       });
     }
 
-    const {message,pageTitle,pageContext,history=[]}=req.body||{};
+    const {message,pageTitle,pageContext,history=[],studyState=null}=req.body||{};
     if(!message||typeof message!=="string"){
       return res.status(400).json({error:"Ask a question first."});
     }
@@ -78,6 +78,15 @@ When a student says they do not know what to do, act as a guide. Give them a sho
 6) use a larger mastery quiz when one exists.
 For PCTH Week 2 specifically, the ideal path is Learn flashcards → full Week 2 review for weak concepts → active rhythm discrimination → Standard 10 → missed-question retest → 89-question mastery exam.
 Do not print raw site URLs; the website UI will provide navigation buttons.
+
+PROGRESS-AWARE CONTROL LAYER:
+The browser may send STUDENT PROGRESS below. It comes only from this browser's saved Learn and Test history, so treat it as useful but incomplete.
+- When asked "what should I study?", "what am I weak on?", or similar, prioritize repeated misses and cards marked Still learning.
+- Prefer the weakest specific topic before broad full-deck review.
+- If there is not enough progress data, say that clearly and use the current page/recent material instead of inventing weaknesses.
+- Do not claim to know performance from another browser/device or work that is not represented in STUDENT PROGRESS.
+- Keep recommendations practical and launchable: focused Learn → targeted quiz → one-at-a-time discrimination/teach-back.
+- For timed study blocks, respect the user's available minutes and avoid assigning more work than fits.
 
 SOURCE PRIORITY:
 1) Treat PAGE CONTEXT below as the course-material context for the page the student is currently studying.
