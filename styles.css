@@ -115,3 +115,117 @@ linear-gradient(160deg,#102438,#091827 66%,#081522)}
   .learn-finish{grid-template-columns:1fr}
   .keyboard-hint{display:none}
 }
+
+
+/* Learn Center premium readability override */
+.flashcard{
+  color:#f7fcff;
+  font:inherit;
+  outline:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.flashcard:focus-visible .flash-face{
+  border-color:rgba(124,226,240,.78);
+  box-shadow:0 0 0 4px rgba(76,217,232,.10),0 34px 90px rgba(0,0,0,.38);
+}
+.flashcard-inner{min-height:420px}
+.flash-face{
+  color:#f7fcff;
+  border-color:#315e79;
+  border-radius:26px;
+  padding:62px 10% 66px;
+  background:
+    radial-gradient(circle at 82% 12%,rgba(109,177,255,.14),transparent 31%),
+    radial-gradient(circle at 16% 86%,rgba(76,217,232,.10),transparent 29%),
+    linear-gradient(155deg,#10263d 0%,#091a2a 57%,#06131f 100%);
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.36),
+    inset 0 1px 0 rgba(255,255,255,.045);
+}
+.flash-back{
+  border-color:rgba(101,227,166,.38);
+  background:
+    radial-gradient(circle at 80% 14%,rgba(101,227,166,.12),transparent 29%),
+    radial-gradient(circle at 16% 84%,rgba(76,217,232,.09),transparent 29%),
+    linear-gradient(155deg,#10283b 0%,#091b29 57%,#06131f 100%);
+}
+.flash-label{
+  top:22px;
+  left:24px;
+  color:#baf7ff;
+  background:rgba(76,217,232,.10);
+  border:1px solid rgba(76,217,232,.24);
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.12em;
+  text-shadow:none;
+}
+.answer-label{
+  color:#bff8d6;
+  background:rgba(101,227,166,.09);
+  border-color:rgba(101,227,166,.25);
+}
+.flash-text{
+  color:#ffffff!important;
+  font-size:clamp(28px,3.5vw,42px);
+  line-height:1.22;
+  font-weight:900;
+  letter-spacing:-.026em;
+  max-width:920px;
+  text-shadow:0 2px 18px rgba(0,0,0,.24);
+}
+.flash-back .flash-text{
+  color:#f7fcff!important;
+  font-size:clamp(21px,2.7vw,32px);
+  line-height:1.45;
+  font-weight:780;
+  letter-spacing:-.015em;
+  max-width:940px;
+}
+.flash-note{
+  max-width:800px;
+  color:#bfd1dc!important;
+  font-size:11px;
+  line-height:1.72;
+  margin:23px 0 0;
+  padding-top:17px;
+  border-top:1px solid rgba(190,220,235,.14);
+}
+.flip-hint{
+  bottom:21px;
+  color:#b1c6d2!important;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:9px;
+  font-weight:850;
+}
+.learn-grade-btn{
+  background:linear-gradient(180deg,#0d2031,#091827);
+}
+.learn-grade-btn b{color:#f7fcff!important;font-size:11px}
+.learn-grade-btn small{color:#a9bfcc!important}
+.learn-grade-btn.learning:hover:not(:disabled){
+  border-color:rgba(255,198,109,.50);
+  background:linear-gradient(180deg,rgba(255,198,109,.08),#091827);
+}
+.learn-grade-btn.known:hover:not(:disabled){
+  border-color:rgba(101,227,166,.50);
+  background:linear-gradient(180deg,rgba(101,227,166,.08),#091827);
+}
+@media(max-width:900px){
+  .flashcard,.flashcard-inner{min-height:390px}
+  .flash-face{padding:60px 8.5% 62px}
+}
+@media(max-width:600px){
+  .flashcard,.flashcard-inner{min-height:400px}
+  .flash-face{padding:68px 8% 64px}
+  .flash-text{font-size:27px;line-height:1.28}
+  .flash-back .flash-text{font-size:20px;line-height:1.5}
+  .flash-note{font-size:10px}
+  .flash-label{top:18px;left:18px}
+  .flip-hint{bottom:17px}
+}
