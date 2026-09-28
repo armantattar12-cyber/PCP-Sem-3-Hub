@@ -11,18 +11,18 @@ app.use((req,res,next)=>{
   if(req.method==="OPTIONS") return res.sendStatus(204);
   next();
 });
-app.get("/",(_,res)=>res.json({ok:true,service:"PCP Tutor"}));
+app.get("/",(_,res)=>res.json({ok:true,service:"Arman"}));
 app.get("/health",(_,res)=>res.json({ok:true}));
 app.post("/api/chat",async(req,res)=>{
   try{
     if(!process.env.OPENAI_API_KEY){
-      return res.status(503).json({error:"PCP Tutor is installed but needs one-time API activation."});
+      return res.status(503).json({error:"Arman is installed but needs one-time API activation."});
     }
     const {message,pageTitle,pageContext,history=[]}=req.body||{};
     if(!message||typeof message!=="string") return res.status(400).json({error:"Ask a question first."});
     const hist=Array.isArray(history)?history.slice(-10):[];
     const transcript=hist.map(x=>(x.role==="user"?"Student":"Tutor")+": "+String(x.text||"").slice(0,1800)).join("\n");
-    const instructions=`You are PCP Tutor, an embedded study tutor for a Canadian Primary Care Paramedic Semester 3 study website.
+    const instructions=`You are Arman, an embedded study tutor for a Canadian Primary Care Paramedic Semester 3 study website.
 Your job is to help the student learn actively, accurately, and efficiently.
 
 STYLE:
@@ -59,14 +59,14 @@ ${String(pageContext||"").slice(0,14000)}`;
     const j=await response.json();
     if(!response.ok){
       console.error("OpenAI error",response.status,j?.error?.message||"unknown");
-      return res.status(502).json({error:"PCP Tutor could not reach the AI service."});
+      return res.status(502).json({error:"Arman could not reach the AI service."});
     }
     let answer=j.output_text;
     if(!answer&&Array.isArray(j.output)){
       answer=j.output.flatMap(o=>o.content||[]).filter(c=>c.type==="output_text").map(c=>c.text).join("\n");
     }
     res.json({answer:answer||"I couldn't generate an answer."});
-  }catch(e){console.error(e);res.status(500).json({error:"PCP Tutor hit a temporary error."})}
+  }catch(e){console.error(e);res.status(500).json({error:"Arman hit a temporary error."})}
 });
 const port=process.env.PORT||10000;
-app.listen(port,()=>console.log("PCP Tutor listening on",port));
+app.listen(port,()=>console.log("Arman listening on",port));
