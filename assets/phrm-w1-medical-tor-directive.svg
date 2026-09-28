@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1510" viewBox="0 0 1400 1510">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#162230}.title{font-size:52px;font-weight:800;fill:#0b82c6}.kicker{font-size:24px;font-weight:700;fill:#687887}.h{font-size:29px;font-weight:800;fill:#0b82c6}.bar{fill:#064b70}.patch{fill:#830044}.bartext{font-size:22px;font-weight:800;fill:#fff}.lab{font-size:20px;font-weight:800}.v{font-size:20px}.small{font-size:18px;fill:#334657}.row{fill:#c8e9f8}.white{fill:#fff}.line{stroke:#1b3140;stroke-width:2}.accent{stroke:#f06b2b;stroke-width:6;stroke-linecap:round}
+</style>
+<rect width="1400" height="1510" rx="28" fill="#fff"/>
+<text x="70" y="86" class="kicker">ALS PCS 5.4 • June 2, 2025 • PHRM 208 Week 1</text>
+<text x="70" y="154" class="title">Medical Termination of Resuscitation (TOR)</text>
+<line x1="70" y1="185" x2="1330" y2="185" class="accent"/>
+
+<text x="70" y="250" class="h">Conditions</text>
+<rect x="70" y="280" width="600" height="55" class="bar"/><text x="275" y="317" class="bartext">Medical TOR</text>
+<rect x="70" y="335" width="600" height="55" class="white"/><text x="90" y="371" class="lab">Age</text><text x="320" y="371" class="v">≥ 16 years</text>
+<rect x="70" y="390" width="600" height="55" class="row"/><text x="90" y="426" class="lab">LOA</text><text x="320" y="426" class="v">Altered</text>
+<rect x="70" y="445" width="600" height="55" class="white"/><text x="90" y="481" class="lab">HR / RR / SBP</text><text x="320" y="481" class="v">N/A</text>
+<rect x="70" y="500" width="600" height="210" class="row"/><text x="90" y="540" class="lab">Other</text>
+<text x="320" y="540" class="v">Arrest not witnessed by paramedic</text>
+<text x="320" y="580" class="lab">AND</text>
+<text x="320" y="620" class="v">No ROSC after 20 minutes of resuscitation</text>
+<text x="320" y="660" class="lab">AND</text>
+<text x="320" y="700" class="v">No defibrillation delivered</text>
+
+<text x="735" y="250" class="h">Contraindications</text>
+<rect x="735" y="280" width="595" height="55" class="bar"/><text x="930" y="317" class="bartext">Medical TOR</text>
+<text x="755" y="375" class="v">Pregnancy presumed to be ≥ 20 weeks gestation</text>
+<line x1="735" y1="398" x2="1330" y2="398" class="line"/>
+<text x="755" y="440" class="v">Suspected hypothermia</text>
+<line x1="735" y1="463" x2="1330" y2="463" class="line"/>
+<text x="755" y="505" class="v">Airway obstruction</text>
+<line x1="735" y1="528" x2="1330" y2="528" class="line"/>
+<text x="755" y="570" class="v">Non-opioid drug overdose/toxicology</text>
+<line x1="735" y1="593" x2="1330" y2="593" class="line"/>
+
+<text x="70" y="795" class="h">Mandatory Provincial Patch Point</text>
+<rect x="70" y="825" width="1260" height="64" class="patch"/><text x="392" y="867" class="bartext">Patch to consider Medical TOR (if applicable)</text>
+<text x="70" y="940" class="v">Patch early to consider TOR if there are extenuating circumstances or the paramedic considers ongoing resuscitation to be futile.</text>
+<text x="70" y="985" class="v">If the patch fails, and/or there is no ROSC after 20 minutes of resuscitation, initiate transport.</text>
+
+<text x="70" y="1070" class="h">Lecture considerations for TOR</text>
+<text x="70" y="1112" class="v">• Age  • ETCO₂  • Bystander witnessed  • Bystander CPR</text>
+<text x="70" y="1153" class="v">• Patient location  • Transportation time  • Egress/extrication time  • Prolonged transport</text>
+<text x="70" y="1194" class="v">• Caregiver wishes  • DNR confirmation form  • Underlying end-stage progressive illness</text>
+<text x="70" y="1235" class="v">• Unusual cause of arrest such as electrocution, hanging and toxicology</text>
+
+<text x="70" y="1325" class="h">Clinical consideration</text>
+<text x="70" y="1367" class="small">The BHP might not authorize TOR even if the patient meets the TOR rule. The lecture notes that context such as location, ETCO₂, age,</text>
+<text x="70" y="1402" class="small">bystander witness/CPR, transport time and unusual cause of arrest may affect the decision.</text>
+<text x="70" y="1455" class="small">Lecture note: a TOR might be granted even though contraindicated; patch order is for withhold resuscitation.</text>
+</svg>
