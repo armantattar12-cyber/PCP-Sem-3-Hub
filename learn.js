@@ -96,10 +96,62 @@ const DECKS={
     {id:"tor",f:"Where should exact TOR criteria come from?",b:"The current applicable ALS PCS / medical directive and Companion Document.",n:"Do not rely on a remembered one-line summary for exact criteria."},
     {id:"reversible",f:"Why search for reversible causes in PEA/asystole?",b:"A treatable mechanism may be driving the arrest, and correcting it can be essential to restoring circulation.",n:"Examples include hypoxia and tension pneumothorax."}
   ]
+},
+"phrm-w2":{
+  classCode:"PHRM 208",week:"Week 2",title:"Trauma, TXA & ROSC",sub:"Traumatic hemorrhage • trauma arrest • TOR • ROSC",
+  test:"test.html?class=phrm&material=phrm-w2&length=10&start=1",
+  cards:[
+    {id:"ftt-priority",f:"Major trauma: what should happen on scene?",b:"Provide only valuable immediate treatment and initiate transport as soon as possible.",n:"The lecture highlights pneumothorax/tension pneumothorax and catastrophic bleeds as valuable scene treatment."},
+    {id:"ftt-close-ed",f:"When does the FTT slide say to use the closest ED?",b:"If the airway cannot be secured or survival to the LTH/regional equivalent is unlikely, unless penetrating torso or head/neck trauma.",n:"The slide also says to consider Trauma TOR as per ALS PCS."},
+    {id:"diamond",f:"Lethal diamond of death in trauma",b:"Acidosis • hypothermia • coagulopathy • hypocalcemia.",n:"These problems interact and worsen hemorrhage physiology."},
+    {id:"acidosis",f:"How does hemorrhage drive acidosis?",b:"Blood loss/shock ↓ tissue oxygen delivery → anaerobic metabolism → lactic acid buildup → metabolic acidosis.",n:"The lecture says this further impairs cellular function and clotting factors/enzymes."},
+    {id:"hypothermia",f:"Why is hypothermia dangerous in trauma?",b:"It impairs clotting enzymes and platelet function, worsening coagulopathy.",n:"The lecture states clotting decreases about 10% for every 1°C drop."},
+    {id:"coagulopathy",f:"What perpetuates traumatic coagulopathy?",b:"Blood loss, dilution of clotting factors and hypothermia impair clot formation and increase ongoing hemorrhage.",n:"The cycle feeds back into more bleeding, hypothermia and acidosis."},
+    {id:"hypocalcemia",f:"Lecture effects of hypocalcemia",b:"Decreased coagulation, decreased cardiac signaling/arrhythmia, and decreased smooth-muscle contraction/hypotension.",n:"The lecture links this to reduced ionized calcium."},
+    {id:"normal-saline",f:"0.9% NaCl values highlighted in Week 2",b:"Na⁺ 154 mmol/L • Cl⁻ 154 mmol/L • pH 5.5 • room temperature.",n:"These are the values shown on the fluid-resuscitation slide."},
+    {id:"crash2-purpose",f:"What did CRASH-2 study?",b:"Whether early TXA reduces death in trauma patients bleeding or at risk of significant bleeding.",n:"The lecture describes it as a large international randomized controlled trial."},
+    {id:"crash2-pop",f:"CRASH-2 population in the lecture",b:"20,127 trauma patients • 274 hospitals • 40 countries.",n:"Patients were randomized to TXA or placebo."},
+    {id:"crash2-time",f:"When was TXA most effective in the CRASH-2 slides?",b:"Early—best within 1 hour; benefit declined after 3 hours.",n:"The lecture emphasizes administration within 3 hours of injury."},
+    {id:"txa-class",f:"TXA classification",b:"Antifibrinolytic agent.",n:"Other name shown: Cyklokapron."},
+    {id:"txa-moa",f:"TXA mechanism of action",b:"Reversibly blocks lysine-binding sites on plasminogen, reducing fibrinolysis and stabilizing formed fibrin clot.",n:"The lecture also states this prevents plasminogen-to-plasmin activity involved in clot breakdown."},
+    {id:"hemostasis1",f:"Hemostasis Stage 1",b:"Vasoconstriction.",n:"The damaged vessel decreases nitric oxide and increases endothelin, promoting local vasoconstriction."},
+    {id:"hemostasis2",f:"Hemostasis Stage 2",b:"Primary hemostasis — platelet plug formation.",n:"Platelet adhesion/activation and aggregation build the plug."},
+    {id:"hemostasis3",f:"Hemostasis Stage 3",b:"Secondary hemostasis — fibrin blood clot formation.",n:"Thrombin converts fibrinogen to fibrin; fibrin forms a stabilizing web."},
+    {id:"hemostasis4",f:"Hemostasis Stage 4",b:"Fibrinolysis — dissolution/breakdown of the clot.",n:"t-PA converts plasminogen to plasmin; this is where TXA is emphasized."},
+    {id:"txa-stage",f:"Where does TXA act in the lecture’s hemostasis sequence?",b:"Stage 4: fibrinolysis.",n:"TXA interferes with plasminogen binding and subsequent fibrin breakdown."},
+    {id:"txa-ae",f:"Adverse effects of TXA listed in Week 2",b:"Hypotension with rapid administration, thromboembolic events, nausea/vomiting, dizziness, seizures, diarrhea.",n:"The lecture especially flags hypotension with rapid administration."},
+    {id:"hem-indication",f:"Traumatic Hemorrhage MD indication",b:"Suspected hemorrhage due to trauma AND hemodynamic instability.",n:"Both parts are shown together in the lecture directive table."},
+    {id:"hem-age",f:"Traumatic Hemorrhage MD age condition",b:"Age ≥16 years.",n:"This is the age condition shown for TXA in the lecture."},
+    {id:"hem-hemo",f:"Hemodynamic condition highlighted for TXA",b:"HR >110 BPM or hypotension.",n:"Shown in the lecture’s Traumatic Hemorrhage directive table."},
+    {id:"hem-contra-time",f:"TXA time contraindication",b:"Greater than 3 hours from injury to administration OR unknown time of injury.",n:"The lecture explains the later shift away from early hyperfibrinolysis."},
+    {id:"hem-contra-head",f:"TXA head-injury contraindication",b:"Isolated head injury.",n:"The lecture lists this as a Traumatic Hemorrhage directive contraindication."},
+    {id:"txa-dose",f:"TXA dose in the Week 2 directive",b:"1000 mg IV or IM • maximum single dose 1000 mg • maximum 1 dose.",n:"No repeat dosing interval is shown."},
+    {id:"txa-iv",f:"How should IV TXA be administered?",b:"Slow IV injection over at least 5 minutes.",n:"Rapid administration can cause hypotension; IV route applies only when authorized for PCP Autonomous IV."},
+    {id:"txa-im",f:"IM TXA practical point",b:"Lecture: vial is 1000 mg/10 mL; maximum 5 mL per vastus lateralis, so use both vastus lateralis sites.",n:"The lecture emphasizes SLOW PUSH."},
+    {id:"txa-transport",f:"Should TXA delay trauma transport?",b:"No. Do not delay transport to obtain IV access or administer TXA; it can be done en route.",n:"Hemorrhage control and other reversible causes remain the priority."},
+    {id:"txa-internal",f:"Can TXA be considered for internal traumatic bleeding?",b:"Yes—the lecture says it is not limited to obvious external bleeding.",n:"Example given: an MVC patient who is tachycardic/hypotensive."},
+    {id:"txa-vsa",f:"TXA in traumatic cardiac arrest",b:"The lecture says TXA is not included in the current traumatic-arrest algorithm presented.",n:"Immediate correction of reversible causes is emphasized instead."},
+    {id:"trauma-vsa-causes",f:"Most common reversible cause of Trauma VSA on the slide",b:"Uncontrolled hemorrhage — 48%.",n:"The same slide lists tension pneumothorax 13%, asphyxia 13%, cardiac tamponade 10%."},
+    {id:"tca-indication",f:"Traumatic Cardiac Arrest MD indication",b:"Cardiac arrest secondary to severe blunt or penetrating trauma.",n:"This is the indication shown in the lecture directive table."},
+    {id:"tca-cpr",f:"Traumatic arrest CPR condition",b:"CPR performed in 2-minute intervals.",n:"The directive slide lists age/HR/RR/SBP as N/A for CPR."},
+    {id:"tca-defib",f:"When is manual defibrillation considered in traumatic arrest?",b:"For VF or pulseless VT when available and authorized.",n:"Other rhythms are listed as a contraindication to manual defibrillation."},
+    {id:"tca-peddefib",f:"Trauma arrest defibrillation: ≥24 h to <8 y",b:"One defibrillation at 2 J/kg.",n:"The lecture table shows a maximum of 1 dose/defibrillation."},
+    {id:"tor-core",f:"Trauma TOR: core rhythm/pulse conditions",b:"Age ≥16, no palpable pulse, no defibrillation delivered, then the asystole/PEA pathway depends on signs of life and transport time.",n:"This is a Mandatory Provincial Patch Point in the lecture."},
+    {id:"tor-contra",f:"Trauma TOR contraindications highlighted",b:"Age <16, defibrillation delivered, signs of life since full extrication, specified PEA/transport situations, and certain penetrating trauma cases.",n:"Use the current directive for exact operational wording."},
+    {id:"signs-life",f:"Signs of life listed in the trauma-arrest lecture",b:"Spontaneous movement, respiratory efforts, organized electrical activity on ECG, and reactive pupils.",n:"These are the signs explicitly listed on the clinical-considerations slide."},
+    {id:"rosc-indication",f:"ROSC Medical Directive indication",b:"Patient with return of spontaneous circulation after resuscitation was initiated.",n:"This is the lecture directive indication."},
+    {id:"rosc-o2",f:"ROSC oxygen saturation target",b:"SpO₂ 94–98%.",n:"The lecture says to optimize oxygenation while avoiding unnecessary 100% oxygen."},
+    {id:"rosc-etco2",f:"ROSC ETCO₂ target",b:"30–40 mmHg.",n:"Avoid hyperventilation; continuous waveform capnography is preferred if available."},
+    {id:"rosc-fluid",f:"ROSC 0.9% NaCl bolus",b:"10 mL/kg IV for hypotension when chest auscultation is clear; maximum 1000 mL.",n:"Fluid overload is listed as a contraindication."},
+    {id:"rosc-reassess",f:"ROSC fluid reassessment intervals",b:"Age ≥2 to <12: every 100 mL • age ≥12: every 250 mL.",n:"Both groups have a maximum volume of 1000 mL in the lecture table."},
+    {id:"rosc-map",f:"MAP targets highlighted after ROSC",b:"Adults ≥65 mmHg • pediatrics ≥55 mmHg.",n:"The lecture frames MAP as a global perfusion marker."},
+    {id:"rosc-12lead",f:"Post-ROSC ECG action",b:"Consider 12-lead ECG acquisition and interpretation.",n:"The final checklist says approximately 10 minutes post ROSC."},
+    {id:"rosc-checklist",f:"Core post-ROSC sequence",b:"Note ROSC time → repeat primary survey → monitor → ventilation/oxygenation → hemodynamics → 12-lead/STEMI assessment → reassess/transport.",n:"This follows the final Week 2 ROSC checklist."}
+  ]
 }
 };
 
-const ORDER=["pcth-w1","pcth-w2","phrm-sga","phrm-mca"];
+const ORDER=["pcth-w1","pcth-w2","phrm-sga","phrm-mca","phrm-w2"];
 const TOPIC_CARDS={
   "pcth-w1":{
     cells:["auto","excite","conduct","contract","refract","chrono","ino","dromo","symp","para"],
@@ -126,6 +178,14 @@ const TOPIC_CARDS={
     cpr:["vent","hyper","etco2"],
     special:["pedbrady","preg","opioid"],
     directives:["dnr","tor","reversible"]
+  },
+  "phrm-w2":{
+    trauma:["ftt-priority","ftt-close-ed","diamond","acidosis","hypothermia","coagulopathy","hypocalcemia","normal-saline"],
+    txa:["crash2-purpose","crash2-pop","crash2-time","txa-class","txa-moa","hemostasis1","hemostasis2","hemostasis3","hemostasis4","txa-stage","txa-ae"],
+    hemorrhage:["hem-indication","hem-age","hem-hemo","hem-contra-time","hem-contra-head","txa-dose","txa-iv","txa-im","txa-transport","txa-internal"],
+    "trauma-arrest":["txa-vsa","trauma-vsa-causes","tca-indication","tca-cpr","tca-defib","tca-peddefib","signs-life"],
+    "trauma-tor":["tor-core","tor-contra"],
+    rosc:["rosc-indication","rosc-o2","rosc-etco2","rosc-fluid","rosc-reassess","rosc-map","rosc-12lead","rosc-checklist"]
   }
 };
 const TOPIC_LABELS={
@@ -134,7 +194,7 @@ const TOPIC_LABELS={
   cells:"cardiac cell properties",pacemakers:"pacemaker hierarchy",conduction:"conduction & AV delay",
   electrical:"depolarization & refractory periods",ecg:"ECG fundamentals",airway:"SGA indications & placement",
   ventilation:"advanced-airway ventilation",rhythms:"arrest rhythm recognition",cpr:"CPR / ventilation",
-  special:"special arrest considerations",directives:"DNR / TOR / reversible causes"
+  special:"special arrest considerations",directives:"DNR / TOR / reversible causes",trauma:"trauma physiology & priorities",txa:"TXA & hemostasis",hemorrhage:"Traumatic Hemorrhage directive","trauma-arrest":"Traumatic Cardiac Arrest","trauma-tor":"Trauma TOR",rosc:"ROSC care"
 };
 const STORAGE="pcpLearnProgress.v1";
 const $=s=>document.querySelector(s);
