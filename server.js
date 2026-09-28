@@ -13,7 +13,8 @@ app.use((req,res,next)=>{
 });
 app.get("/",(_,res)=>res.json({ok:true,service:"Arman"}));
 app.get("/health",(_,res)=>res.json({ok:true,configured:Boolean(process.env.OPENAI_API_KEY),model:process.env.OPENAI_MODEL||null}));
-app.post("/api/chat",async(req,res)=>{\n  console.log("Arman chat request received | origin:",req.headers.origin||"none");
+app.post("/api/chat",async(req,res)=>{
+  console.log("Arman chat request received | origin:",req.headers.origin||"none");
   try{
     if(!process.env.OPENAI_API_KEY){
       return res.status(503).json({error:"Arman is installed but needs one-time API activation."});
