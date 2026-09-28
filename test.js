@@ -174,4 +174,30 @@ function renderHistory(){
  const xs=attempts();if(!xs.length){$("#historySummary").innerHTML='<span>No quiz attempts yet — start with a Standard 10.</span>';return}
  const a=xs[0],bank=getBank(a.key);$("#historySummary").innerHTML='<span><b>Last result:</b> '+bank.classCode+' • '+bank.title+'</span><span class="history-score">'+a.pct+'%</span>';
 }
+function applyDeepLink(){
+ const p=new URLSearchParams(location.search);
+ const cls=p.get("class");
+ const material=p.get("material");
+ const len=p.get("length");
+
+ if(cls&&materials[cls]){
+  selectedClass=cls;
+  const validMaterial=material&&materials[cls].some(x=>x.id===material);
+  selectedMaterial=validMaterial?material:materials[cls][0].id;
+ }
+ if(len&&(["5","10","full"].includes(len))) selectedLength=len;
+
+ $("[data-class]").forEach(b=>b.classList.toggle("active",b.dataset.class===selectedClass));
+ $(".length-card").forEach(b=>b.classList.toggle("active",String(b.dataset.length)===String(selectedLength)));
+
+ return p.get("start")==="1";
+}
+const autoStart=applyDeepLink();
 renderMaterials();syncLaunch();renderHistory();
+if(autoStart){
+ setTimeout(()=>{
+  const m=[...materials.pcth,...materials.phrm].find(x=>x.id===selectedMaterial);
+  if(m&&m.external){window.open(m.external,"_blank");return}
+  if(getBank(selectedMaterial)) startQuiz(selectedMaterial,selectedLength);
+ },80);
+}
