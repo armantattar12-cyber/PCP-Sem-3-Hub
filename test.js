@@ -85,6 +85,39 @@ const BANKS={
 ]}
 };
 
+const QUIZ_TOPIC_IDS={
+ "pcth-w1":{
+  cells:["w1q1","w1q2","w1q3","w1q4","w1q5","w1q8","w1q9","w1q10"],
+  conduction:["w1q6","w1q7"],
+  electrical:["w1q16","w1q17"],
+  ecg:["w1q11","w1q12","w1q13","w1q14","w1q15","w1q18","w1q19","w1q20"]
+ },
+ "pcth-w2":{
+  sinus:["w2q1","w2q2","w2q3","w2q4","w2q5"],
+  junctional:["w2q6","w2q7"],
+  atrial:["w2q8","w2q9","w2q10","w2q11","w2q12"],
+  svt:["w2q13","w2q14","w2q15"],
+  "av-blocks":["w2q16","w2q17","w2q18","w2q19","w2q20"]
+ },
+ "phrm-sga":{
+  airway:["sgaq1","sgaq2","sgaq7","sgaq8","sgaq9","sgaq10","sgaq11","sgaq12"],
+  ventilation:["sgaq3","sgaq4","sgaq5","sgaq6"]
+ },
+ "phrm-mca":{
+  rhythms:["mcaq1","mcaq2","mcaq3","mcaq4","mcaq5","mcaq18","mcaq20"],
+  cpr:["mcaq6","mcaq7","mcaq8","mcaq15"],
+  special:["mcaq9","mcaq10","mcaq13","mcaq14"],
+  directives:["mcaq11","mcaq12","mcaq16","mcaq17","mcaq19"]
+ }
+};
+const TOPIC_LABELS={
+ sinus:"sinus rhythms",junctional:"junctional rhythms",atrial:"atrial rhythms",svt:"SVT / WPW",
+ "av-blocks":"AV blocks",cells:"cardiac cell properties",conduction:"conduction & AV delay",
+ electrical:"depolarization & refractory periods",ecg:"ECG fundamentals",airway:"SGA indications & placement",
+ ventilation:"advanced-airway ventilation",rhythms:"arrest rhythm recognition",cpr:"CPR / ventilation",
+ special:"special arrest considerations",directives:"DNR / TOR / reversible causes"
+};
+
 const materials={
 pcth:[
  {id:"pcth-w1",week:"Week 1",title:"Introduction to ECG",sub:"Cells • action potentials • conduction • ECG basics"},
@@ -97,7 +130,7 @@ phrm:[
  {id:"phrm-mixed",week:"Week 1",title:"Week 1 Mixed Review",sub:"SGA + cardiac arrest together",mixed:["phrm-sga","phrm-mca"]}
 ]};
 
-let selectedClass="pcth",selectedMaterial="pcth-w1",selectedLength=10,currentQuestions=[],currentKey="";
+let selectedClass="pcth",selectedMaterial="pcth-w1",selectedLength=10,currentQuestions=[],currentKey="",deepTopic="";
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
@@ -106,20 +139,30 @@ function getBank(id){
  if(mat?.mixed){let qs=[];mat.mixed.forEach(k=>qs=qs.concat(BANKS[k].questions));return {classCode:"PHRM 208",week:"Week 1",title:"Week 1 Mixed Review",source:"PHRM Week 1",questions:qs}}
  return BANKS[id];
 }
+function getQuestionPool(id,wrongOnly){
+ const bank=getBank(id);
+ if(wrongOnly)return wrongOnly;
+ const ids=((QUIZ_TOPIC_IDS[id]||{})[deepTopic]||[]);
+ if(ids.length){
+  const focused=bank.questions.filter(q=>ids.includes(q.id));
+  if(focused.length)return focused;
+ }
+ return bank.questions;
+}
 function renderMaterials(){
  const box=$("#materialGrid");box.innerHTML="";
  materials[selectedClass].forEach((m,i)=>{
   const b=document.createElement("button");b.className="material-card "+(m.id===selectedMaterial?"active":"");b.innerHTML='<span class="material-week">'+m.week+'</span><b>'+m.title+'</b><small>'+m.sub+'</small>'+(m.external?'<span class="external-tag">FULL EXAM ↗</span>':'');
-  b.onclick=()=>{selectedMaterial=m.id;renderMaterials();syncLaunch()};box.appendChild(b)
+  b.onclick=()=>{selectedMaterial=m.id;deepTopic="";renderMaterials();syncLaunch()};box.appendChild(b)
  });
 }
 function syncLaunch(){
  const m=[...materials.pcth,...materials.phrm].find(x=>x.id===selectedMaterial);
  $("#launchTitle").textContent=(selectedClass==="pcth"?"PCTH 308":"PHRM 208")+" • "+m.week;
  if(m.external){$("#launchSub").textContent=m.title+" • opens the dedicated 89-question quiz";$("#lengthSection").classList.add("muted-section");$("#startBtn").textContent="Open Full Exam ↗"}
- else{const bank=getBank(selectedMaterial),n=selectedLength==="full"?bank.questions.length:Math.min(+selectedLength,bank.questions.length);$("#launchSub").textContent=m.title+" • "+n+" question"+(n===1?"":"s");$("#lengthSection").classList.remove("muted-section");$("#startBtn").textContent="Start Quiz →"}
+ else{const pool=getQuestionPool(selectedMaterial),n=selectedLength==="full"?pool.length:Math.min(+selectedLength,pool.length);$("#launchSub").textContent=m.title+(deepTopic?" • "+(TOPIC_LABELS[deepTopic]||deepTopic):"")+" • "+n+" question"+(n===1?"":"s");$("#lengthSection").classList.remove("muted-section");$("#startBtn").textContent="Start Quiz →"}
 }
-$$("[data-class]").forEach(b=>b.onclick=()=>{selectedClass=b.dataset.class;selectedMaterial=materials[selectedClass][0].id;$$("[data-class]").forEach(x=>x.classList.toggle("active",x===b));renderMaterials();syncLaunch()});
+$("[data-class]").forEach(b=>b.onclick=()=>{selectedClass=b.dataset.class;selectedMaterial=materials[selectedClass][0].id;deepTopic="";$("[data-class]").forEach(x=>x.classList.toggle("active",x===b));renderMaterials();syncLaunch()});
 $$(".length-card").forEach(b=>b.onclick=()=>{selectedLength=b.dataset.length;$$(".length-card").forEach(x=>x.classList.toggle("active",x===b));syncLaunch()});
 $("#startBtn").onclick=()=>{
  const m=[...materials.pcth,...materials.phrm].find(x=>x.id===selectedMaterial);
@@ -128,11 +171,11 @@ $("#startBtn").onclick=()=>{
 };
 function startQuiz(key,len,wrongOnly){
  const bank=getBank(key);currentKey=key;
- let pool=wrongOnly||bank.questions;
+ let pool=getQuestionPool(key,wrongOnly);
  const count=len==="full"?pool.length:Math.min(+len,pool.length);
  currentQuestions=shuffle(pool).slice(0,count);
  $("#builder").classList.add("hidden");$("#results").classList.add("hidden");$("#quizArea").classList.remove("hidden");
- $("#quizCourse").textContent=bank.classCode+" • "+bank.week;$("#quizTitle").textContent=bank.title;$("#quizMeta").textContent=count+" questions • answer everything you can, then grade";
+ $("#quizCourse").textContent=bank.classCode+" • "+bank.week;$("#quizTitle").textContent=bank.title+(deepTopic?" • "+(TOPIC_LABELS[deepTopic]||deepTopic):"");$("#quizMeta").textContent=count+" questions • answer everything you can, then grade";
  $("#questionCount").textContent=count+" total";renderQuestions();window.scrollTo({top:0,behavior:"smooth"});
 }
 function renderQuestions(){
@@ -179,6 +222,7 @@ function applyDeepLink(){
  const cls=p.get("class");
  const material=p.get("material");
  const len=p.get("length");
+ deepTopic=p.get("topic")||"";
 
  if(cls&&materials[cls]){
   selectedClass=cls;
