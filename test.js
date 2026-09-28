@@ -82,6 +82,53 @@ const BANKS={
 {id:"mcaq18",q:"Which finding alone is insufficient to diagnose PEA?",o:["An organized rhythm on the monitor","An organized rhythm plus no palpable pulse","A clinical pulse check","Assessment of perfusion"],a:0,e:"An organized rhythm alone does not establish PEA; absence of a pulse must also be determined clinically."},
 {id:"mcaq19",q:"What is the main purpose of searching for reversible causes during PEA/asystole?",o:["To identify a treatable mechanism that may be causing the arrest","To decide whether the ECG paper speed is correct","To classify all patients as VF","To avoid chest compressions"],a:0,e:"Correcting a reversible cause can be essential to restoring circulation in non-shockable arrest."},
 {id:"mcaq20",q:"Which statement best summarizes the role of the ECG during cardiac arrest?",o:["The ECG replaces pulse assessment","The ECG identifies electrical rhythm, while pulse/perfusion determine whether mechanical circulation is present","The ECG measures cardiac output directly","A normal-looking rhythm guarantees ROSC"],a:1,e:"The monitor shows electrical activity; pulse and perfusion remain clinical assessments."}
+]},
+"phrm-w2":{
+ classCode:"PHRM 208",week:"Week 2",title:"Trauma, TXA & ROSC",source:"PHRM Week 2 trauma/TXA/ROSC lecture",questions:[
+{id:"p2q1",q:"For major or multisystem trauma, what overall scene strategy does the lecture emphasize?",o:["Complete all possible treatments before moving","Provide valuable immediate treatment and initiate transport as soon as possible","Wait for full normalization of vital signs","Delay transport until TXA is administered"],a:1,e:"The lecture emphasizes valuable scene treatment only, then rapid transport toward definitive trauma care."},
+{id:"p2q2",q:"Which pair is specifically listed as examples of valuable scene treatment in major trauma?",o:["Catastrophic bleeding control and pneumothorax/tension pneumothorax management","Routine 12-lead ECG and oral glucose","Antibiotics and wound closure","TXA and a complete secondary survey before departure"],a:0,e:"The lecture specifically highlights catastrophic bleeds and pneumothorax/tension pneumothorax."},
+{id:"p2q3",q:"Which four problems make up the lecture's lethal diamond of death in trauma?",o:["Hypoxia, hyperthermia, thrombocytosis, hypercalcemia","Acidosis, hypothermia, coagulopathy, hypocalcemia","Alkalosis, hypothermia, hypertension, hypoglycemia","Acidosis, hyperthermia, coagulopathy, hypercalcemia"],a:1,e:"The lethal diamond is acidosis, hypothermia, coagulopathy and hypocalcemia."},
+{id:"p2q4",q:"How does severe hemorrhage contribute to metabolic acidosis according to the lecture?",o:["It increases tissue oxygen delivery","It causes anaerobic metabolism and lactic acid buildup","It directly raises bicarbonate","It eliminates cellular metabolism"],a:1,e:"Blood loss and shock reduce oxygen delivery, driving anaerobic metabolism and lactic acid buildup."},
+{id:"p2q5",q:"What effect does hypothermia have on clotting in the lecture?",o:["It improves platelet function","It impairs clotting enzymes and platelets","It has no effect on coagulation","It only affects red blood cell count"],a:1,e:"The lecture states hypothermia impairs clotting enzymes and platelet function, worsening coagulopathy."},
+{id:"p2q6",q:"The lecture states that every 1°C drop in temperature decreases clotting by approximately:",o:["1%","5%","10%","25%"],a:2,e:"The Week 2 slide states about a 10% decrease in clotting per 1°C drop."},
+{id:"p2q7",q:"Which effect is listed for hypocalcemia in the lecture?",o:["Improved coagulation","Increased smooth-muscle contraction","Decreased coagulation and cardiac signaling","Increased platelet activation only"],a:2,e:"The slide lists decreased coagulation, decreased cardiac signaling and decreased smooth-muscle contraction."},
+{id:"p2q8",q:"Which values does the lecture show for 0.9% NaCl?",o:["Na 140, Cl 100, pH 7.4","Na 154, Cl 154, pH 5.5","Na 130, Cl 90, pH 8.0","Na 154, Cl 100, pH 7.0"],a:1,e:"The fluid-resuscitation slide lists Na+ 154 mmol/L, Cl- 154 mmol/L and pH 5.5."},
+{id:"p2q9",q:"What was the purpose of the CRASH-2 trial as presented in the lecture?",o:["Determine whether early TXA reduces death in bleeding trauma patients","Compare defibrillation energies in trauma arrest","Study oxygen targets after ROSC","Evaluate tourniquets in isolated extremity fractures"],a:0,e:"The lecture describes CRASH-2 as testing whether early TXA reduces death in trauma patients with significant bleeding or risk of bleeding."},
+{id:"p2q10",q:"What population size is shown for CRASH-2 in the lecture?",o:["2,127 patients","10,000 patients","20,127 patients","40,000 patients"],a:2,e:"The lecture states 20,127 trauma patients across 274 hospitals in 40 countries."},
+{id:"p2q11",q:"When does the lecture say TXA was most effective?",o:["After 6 hours","Within 1 hour, with benefit declining after 3 hours","Only after 24 hours","Timing did not matter"],a:1,e:"The CRASH-2 slides emphasize greatest benefit early, best within 1 hour, with benefit declining after 3 hours."},
+{id:"p2q12",q:"How is tranexamic acid classified in the lecture?",o:["Thrombolytic","Antifibrinolytic","Antiplatelet","Vasopressor"],a:1,e:"TXA is classified as an antifibrinolytic agent."},
+{id:"p2q13",q:"Which statement best matches the lecture's TXA mechanism?",o:["It dissolves fibrin clots","It blocks lysine-binding sites on plasminogen and reduces fibrinolysis","It converts fibrin directly to plasmin","It prevents platelet adhesion"],a:1,e:"TXA interferes with plasminogen binding and the fibrinolytic process, helping stabilize formed fibrin clot."},
+{id:"p2q14",q:"At which stage of hemostasis does the lecture emphasize TXA's action?",o:["Stage 1 vasoconstriction","Stage 2 platelet plug","Stage 3 fibrin clot formation","Stage 4 fibrinolysis/clot dissolution"],a:3,e:"The lecture explicitly places TXA's action in Stage 4, fibrinolysis."},
+{id:"p2q15",q:"Which adverse effect is especially associated with rapid TXA administration in the lecture?",o:["Severe hypertension","Hypotension","Bradycardia only","Hyperglycemia"],a:1,e:"Hypotension is specifically highlighted with rapid administration."},
+{id:"p2q16",q:"What is the indication shown for the Traumatic Hemorrhage Medical Directive?",o:["Any trauma patient","Suspected hemorrhage due to trauma AND hemodynamic instability","Any isolated head injury","All external bleeding regardless of physiology"],a:1,e:"The lecture directive table requires suspected hemorrhage due to trauma and hemodynamic instability."},
+{id:"p2q17",q:"What age condition is shown for TXA under the Traumatic Hemorrhage Medical Directive?",o:["≥2 years","≥8 years","≥12 years","≥16 years"],a:3,e:"The lecture directive table shows age ≥16 years."},
+{id:"p2q18",q:"Which hemodynamic condition is highlighted in the Traumatic Hemorrhage directive table?",o:["HR >110 BPM or hypotension","HR <60 only","SBP >180 only","Normal vital signs"],a:0,e:"The lecture table lists HR >110 BPM or hypotension."},
+{id:"p2q19",q:"Which timing situation is a TXA contraindication in the lecture?",o:["Within 30 minutes of injury","Greater than 3 hours from injury to administration or unknown injury time","Within 1 hour of injury","Any known injury time"],a:1,e:"The lecture lists >3 hours from injury to administration or unknown injury time as a contraindication."},
+{id:"p2q20",q:"Which injury pattern is listed as a TXA contraindication in the Week 2 directive?",o:["Multisystem trauma","Internal traumatic hemorrhage","Isolated head injury","Suspected pelvic bleeding"],a:2,e:"Isolated head injury is listed as a contraindication in the lecture's directive table."},
+{id:"p2q21",q:"What TXA dose is shown in the Week 2 Traumatic Hemorrhage directive?",o:["500 mg IV only","1000 mg IV or IM, maximum 1 dose","2000 mg IM every 10 minutes","100 mg/kg IV"],a:1,e:"The lecture shows 1000 mg IV or IM, maximum single dose 1000 mg, maximum one dose."},
+{id:"p2q22",q:"How should IV TXA be administered according to the lecture's clinical considerations?",o:["Rapid IV push","Slow injection over at least 5 minutes","Infused only over 60 minutes","Route must always be IM"],a:1,e:"The lecture says IV TXA should be administered slowly over at least 5 minutes because rapid administration can cause hypotension."},
+{id:"p2q23",q:"The lecture states TXA is supplied as:",o:["1000 mg/10 mL","100 mg/10 mL","500 mg/1 mL","2000 mg/20 mL only"],a:0,e:"The Week 2 TXA tips slide states 1000 mg in 10 mL."},
+{id:"p2q24",q:"What maximum IM volume per vastus lateralis is highlighted in the lecture?",o:["1 mL","2 mL","5 mL","10 mL"],a:2,e:"The lecture lists a maximum IM volume of 5 mL per vastus lateralis and says to use both vastus lateralis sites."},
+{id:"p2q25",q:"Should TXA administration delay transport of a major trauma patient?",o:["Yes, always obtain IV access first","No; the lecture says it can be administered en route and should not delay transport","Only if the patient is tachycardic","Only for internal bleeding"],a:1,e:"The lecture repeatedly states not to delay transport for TXA."},
+{id:"p2q26",q:"Can TXA be considered for suspected internal traumatic bleeding according to the lecture?",o:["No, external bleeding only","Yes","Only for epistaxis","Only for postpartum hemorrhage"],a:1,e:"The lecture explicitly says TXA can be given for internal traumatic bleeding, not just obvious external bleeding."},
+{id:"p2q27",q:"What does the lecture say about TXA in traumatic cardiac arrest?",o:["It is the first-line arrest medication","It is included after every shock","It is not included in the current traumatic-arrest algorithm presented","It replaces hemorrhage control"],a:2,e:"The lecture states TXA is not included in the traumatic-arrest algorithm presented and emphasizes reversible-cause correction."},
+{id:"p2q28",q:"Which reversible cause is shown as the most common in the lecture's Trauma VSA slide?",o:["Cardiac tamponade","Asphyxia","Uncontrolled hemorrhage","Tension pneumothorax"],a:2,e:"The slide lists uncontrolled hemorrhage at 48%, the largest percentage shown."},
+{id:"p2q29",q:"What is the indication for the Traumatic Cardiac Arrest Medical Directive?",o:["Medical arrest after chest pain","Cardiac arrest secondary to severe blunt or penetrating trauma","Any hypotensive trauma patient","ROSC after trauma"],a:1,e:"The directive slide states cardiac arrest secondary to severe blunt or penetrating trauma."},
+{id:"p2q30",q:"How frequently is CPR performed under the traumatic cardiac arrest directive slide?",o:["1-minute intervals","2-minute intervals","5-minute intervals","Continuous without analysis"],a:1,e:"The lecture table states CPR is performed in 2-minute intervals."},
+{id:"p2q31",q:"Which rhythms meet the manual-defibrillation condition in traumatic cardiac arrest?",o:["Asystole and PEA","VF or pulseless VT","Sinus tachycardia","Any organized rhythm"],a:1,e:"The lecture table lists VF or pulseless VT for manual defibrillation."},
+{id:"p2q32",q:"For a traumatic-arrest patient aged ≥24 hours to <8 years, what initial manual-defibrillation dose is shown?",o:["1 J/kg","2 J/kg","4 J/kg","10 J/kg"],a:1,e:"The lecture treatment table shows one defibrillation at 2 J/kg for ≥24 hours to <8 years."},
+{id:"p2q33",q:"Which statement best matches the Trauma TOR slide?",o:["It is automatic whenever trauma arrest occurs","It is a Mandatory Provincial Patch Point with specific age, pulse, rhythm, signs-of-life and transport-time conditions","It applies only after multiple shocks","It never considers transport time"],a:1,e:"The slide presents Trauma TOR as a Mandatory Provincial Patch Point with specific criteria."},
+{id:"p2q34",q:"Which is listed as a sign of life in the traumatic-arrest lecture?",o:["Organized electrical activity on ECG","Skin pallor","Fixed body position only","A low ETCO₂ by itself"],a:0,e:"The lecture lists spontaneous movement, respiratory efforts, organized electrical activity on ECG and reactive pupils as signs of life."},
+{id:"p2q35",q:"What is the indication for the ROSC Medical Directive?",o:["Any patient with chest pain","Return of spontaneous circulation after resuscitation was initiated","Any hypotensive trauma patient before arrest","Only shockable-rhythm patients"],a:1,e:"The lecture directive indication is ROSC after resuscitation was initiated."},
+{id:"p2q36",q:"What SpO₂ target is shown for post-ROSC care?",o:["80–85%","88–92%","94–98%","100% at all times"],a:2,e:"The lecture targets oxygen saturation at 94–98%."},
+{id:"p2q37",q:"What ETCO₂ target is shown after ROSC?",o:["10–20 mmHg","20–25 mmHg","30–40 mmHg","50–60 mmHg"],a:2,e:"The lecture targets ETCO₂ at 30–40 mmHg and warns against hyperventilation."},
+{id:"p2q38",q:"Which fluid bolus is shown for hypotension after ROSC when chest auscultation is clear?",o:["0.9% NaCl 10 mL/kg IV, maximum 1000 mL","0.9% NaCl 50 mL/kg, no maximum","D5W 10 mL/kg","No fluids are permitted"],a:0,e:"The Week 2 ROSC directive shows 0.9% NaCl 10 mL/kg with a maximum of 1000 mL."},
+{id:"p2q39",q:"How often is the ROSC fluid bolus reassessed for age ≥2 to <12 years?",o:["Every 50 mL","Every 100 mL","Every 250 mL","Only after the full litre"],a:1,e:"The lecture table shows reassessment every 100 mL for age ≥2 to <12 years."},
+{id:"p2q40",q:"How often is the ROSC fluid bolus reassessed for age ≥12 years?",o:["Every 50 mL","Every 100 mL","Every 250 mL","Every 1000 mL"],a:2,e:"The lecture table shows reassessment every 250 mL for age ≥12 years."},
+{id:"p2q41",q:"What MAP target does the lecture list for adults after ROSC?",o:["≥45 mmHg","≥55 mmHg","≥65 mmHg","≥90 mmHg"],a:2,e:"The Week 2 MAP slide lists an adult target MAP ≥65 mmHg."},
+{id:"p2q42",q:"What MAP target does the lecture list for pediatric patients after ROSC?",o:["≥45 mmHg","≥55 mmHg","≥65 mmHg","≥80 mmHg"],a:1,e:"The Week 2 MAP slide lists a pediatric target MAP ≥55 mmHg."},
+{id:"p2q43",q:"Which ECG action is specifically included in post-ROSC care?",o:["Avoid all ECG acquisition","Consider 12-lead ECG acquisition and interpretation","Only use a 3-lead rhythm strip after 24 hours","Obtain ECG only if SpO₂ is low"],a:1,e:"The ROSC treatment slide says to consider 12-lead ECG acquisition and interpretation."},
+{id:"p2q44",q:"Which item appears early in the final ROSC checklist?",o:["Ignore the time of ROSC","Note the time of ROSC and repeat the primary survey","Remove all monitoring","Delay transport planning until hospital arrival"],a:1,e:"The final checklist begins with noting the time of ROSC and repeating the primary survey."}
 ]}
 };
 
@@ -108,6 +155,14 @@ const QUIZ_TOPIC_IDS={
   cpr:["mcaq6","mcaq7","mcaq8","mcaq15"],
   special:["mcaq9","mcaq10","mcaq13","mcaq14"],
   directives:["mcaq11","mcaq12","mcaq16","mcaq17","mcaq19"]
+ },
+ "phrm-w2":{
+  trauma:["p2q1","p2q2","p2q3","p2q4","p2q5","p2q6","p2q7","p2q8"],
+  txa:["p2q9","p2q10","p2q11","p2q12","p2q13","p2q14","p2q15"],
+  hemorrhage:["p2q16","p2q17","p2q18","p2q19","p2q20","p2q21","p2q22","p2q23","p2q24","p2q25","p2q26"],
+  "trauma-arrest":["p2q27","p2q28","p2q29","p2q30","p2q31","p2q32","p2q34"],
+  "trauma-tor":["p2q33","p2q34"],
+  rosc:["p2q35","p2q36","p2q37","p2q38","p2q39","p2q40","p2q41","p2q42","p2q43","p2q44"]
  }
 };
 const TOPIC_LABELS={
@@ -115,7 +170,7 @@ const TOPIC_LABELS={
  "av-blocks":"AV blocks",cells:"cardiac cell properties",conduction:"conduction & AV delay",
  electrical:"depolarization & refractory periods",ecg:"ECG fundamentals",airway:"SGA indications & placement",
  ventilation:"advanced-airway ventilation",rhythms:"arrest rhythm recognition",cpr:"CPR / ventilation",
- special:"special arrest considerations",directives:"DNR / TOR / reversible causes"
+ special:"special arrest considerations",directives:"DNR / TOR / reversible causes",trauma:"trauma physiology & priorities",txa:"TXA & hemostasis",hemorrhage:"Traumatic Hemorrhage directive","trauma-arrest":"Traumatic Cardiac Arrest","trauma-tor":"Trauma TOR",rosc:"ROSC care"
 };
 
 const materials={
@@ -127,7 +182,8 @@ pcth:[
 phrm:[
  {id:"phrm-sga",week:"Week 1",title:"Supraglottic Airway Medical Directive",sub:"I-GEL • attempts • confirmation • ventilation"},
  {id:"phrm-mca",week:"Week 1",title:"Medical Cardiac Arrest Medical Directive",sub:"VF/VT • PEA/asystole • CPR • DNR • TOR"},
- {id:"phrm-mixed",week:"Week 1",title:"Week 1 Mixed Review",sub:"SGA + cardiac arrest together",mixed:["phrm-sga","phrm-mca"]}
+ {id:"phrm-mixed",week:"Week 1",title:"Week 1 Mixed Review",sub:"SGA + cardiac arrest together",mixed:["phrm-sga","phrm-mca"]},
+ {id:"phrm-w2",week:"Week 2",title:"Trauma, TXA & ROSC",sub:"Hemorrhage • TXA • trauma arrest/TOR • ROSC"}
 ]};
 
 let selectedClass="pcth",selectedMaterial="pcth-w1",selectedLength=10,currentQuestions=[],currentKey="",deepTopic="";
