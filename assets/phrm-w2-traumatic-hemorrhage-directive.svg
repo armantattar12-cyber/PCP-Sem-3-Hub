@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1180" viewBox="0 0 1400 1180">
+<style>
+text{font-family:Arial,Helvetica,sans-serif;fill:#162230}.title{font-size:52px;font-weight:800;fill:#0b82c6}.kicker{font-size:24px;font-weight:700;fill:#687887}.h{font-size:29px;font-weight:800;fill:#0b82c6}.bar{fill:#064b70}.bartext{font-size:22px;font-weight:800;fill:#fff}.lab{font-size:21px;font-weight:800}.v{font-size:21px}.small{font-size:18px}.note{font-size:20px;fill:#334657}.row{fill:#c8e9f8}.white{fill:#fff}.line{stroke:#1b3140;stroke-width:2}.accent{stroke:#f06b2b;stroke-width:6;stroke-linecap:round}
+</style>
+<rect width="1400" height="1180" rx="28" fill="#fff"/>
+<text x="70" y="86" class="kicker">ALS PCS 5.4 • June 2, 2025 • PHRM 208 Week 2</text>
+<text x="70" y="154" class="title">Traumatic Hemorrhage Medical Directive</text>
+<line x1="70" y1="185" x2="1330" y2="185" class="accent"/>
+<text x="70" y="245" class="h">Indications</text>
+<text x="70" y="285" class="v">Suspected hemorrhage due to trauma</text>
+<text x="70" y="324" class="lab">AND</text>
+<text x="70" y="363" class="v">Hemodynamic instability</text>
+
+<text x="70" y="435" class="h">Conditions</text>
+<rect x="70" y="465" width="590" height="55" class="bar"/><text x="205" y="502" class="bartext">Tranexamic Acid (TXA)</text>
+<rect x="70" y="520" width="590" height="55" class="white"/><text x="90" y="556" class="lab">Age</text><text x="305" y="556" class="v">≥ 16 years</text>
+<rect x="70" y="575" width="590" height="55" class="row"/><text x="90" y="611" class="lab">LOA</text><text x="305" y="611" class="v">N/A</text>
+<rect x="70" y="630" width="590" height="55" class="white"/><text x="90" y="666" class="lab">HR</text><text x="305" y="666" class="v">N/A</text>
+<rect x="70" y="685" width="590" height="55" class="row"/><text x="90" y="721" class="lab">RR</text><text x="305" y="721" class="v">N/A</text>
+<rect x="70" y="740" width="590" height="55" class="white"/><text x="90" y="776" class="lab">SBP</text><text x="305" y="776" class="v">N/A</text>
+<rect x="70" y="795" width="590" height="82" class="row"/><text x="90" y="832" class="lab">Other</text><text x="305" y="827" class="v">HR ≥ 110 BPM or</text><text x="305" y="856" class="v">hypotension</text>
+
+<text x="725" y="435" class="h">Contraindications</text>
+<rect x="725" y="465" width="605" height="55" class="bar"/><text x="875" y="502" class="bartext">Tranexamic Acid (TXA)</text>
+<text x="745" y="566" class="v">Allergy or sensitivity to TXA</text>
+<line x1="725" y1="590" x2="1330" y2="590" class="line"/>
+<text x="745" y="632" class="v">Greater than 3 hours from the time of injury to</text>
+<text x="745" y="664" class="v">drug administration OR unknown time of injury</text>
+<line x1="725" y1="690" x2="1330" y2="690" class="line"/>
+<text x="745" y="735" class="v">Isolated head injury</text>
+<line x1="725" y1="760" x2="1330" y2="760" class="line"/>
+
+<text x="70" y="945" class="h">Treatment</text>
+<rect x="70" y="972" width="1260" height="52" class="bar"/><text x="90" y="1007" class="bartext">Consider Tranexamic Acid (TXA)</text>
+<text x="90" y="1065" class="lab">Route</text><text x="395" y="1065" class="lab">IV</text><text x="900" y="1065" class="lab">IM</text>
+<text x="90" y="1110" class="lab">Initial dose</text><text x="395" y="1110" class="v">1000 mg</text><text x="900" y="1110" class="v">1000 mg</text>
+<text x="90" y="1150" class="small">Max single dose 1000 mg • Dosing interval N/A • Maximum 1 dose</text>
+</svg>
