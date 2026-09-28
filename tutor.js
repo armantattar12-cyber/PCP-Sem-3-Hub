@@ -449,6 +449,12 @@
       if(has(s,"quiz","test","questions")) return {label:"PHRM • Cardiac Arrest Quiz",href:"test.html?class=phrm&material=phrm-mca&length=10&start=1"};
       return {label:"PHRM • Cardiac Arrest",href:"phrm.html#mca"};
     }
+    if(has(s,"bls pcs","bls standard","bls standards","als pcs","als standard","als standards","companion document","reference library","references")){
+      if(has(s,"bls"))return {label:"Reference Library • BLS PCS",href:"references.html#bls"};
+      if(has(s,"companion"))return {label:"Reference Library • Companion",href:"references.html#companion"};
+      if(has(s,"als"))return {label:"Reference Library • ALS PCS",href:"references.html#als"};
+      return {label:"Reference Library",href:"references.html"};
+    }
     if(has(s,"test center","quiz center")) return {label:"Test Center",href:"test.html"};
     return null;
   }
