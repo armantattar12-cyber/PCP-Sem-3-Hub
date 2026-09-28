@@ -59,8 +59,16 @@ ${String(pageContext||"").slice(0,14000)}`;
     });
     const j=await response.json();
     if(!response.ok){
-      console.error("OpenAI error",response.status,j?.error?.message||"unknown");
-      return res.status(502).json({error:"Arman could not reach the AI service."});
+      const code=j?.error?.code||"";
+      const type=j?.error?.type||"";
+      console.error("OpenAI error",response.status,code,j?.error?.message||"unknown");
+      if(code==="credit_balance_exhausted" || (response.status===429 && type==="insufficient_quota")){
+        return res.status(402).json({error:"Arman is connected, but your OpenAI API account has no credits. Add API credits in OpenAI Platform Billing, then try again."});
+      }
+      if(code==="model_not_found"){
+        return res.status(502).json({error:"Arman is connected, but the configured OpenAI model is unavailable. The model setting needs to be updated."});
+      }
+      return res.status(502).json({error:"Arman reached OpenAI, but the API request failed. Check API billing and model access."});
     }
     let answer=j.output_text;
     if(!answer&&Array.isArray(j.output)){
@@ -92,4 +100,4 @@ async function openAISelfTest(){
   }
 }
 const port=process.env.PORT||10000;
-app.listen(port,()=>{console.log("Arman listening on",port,"| OpenAI key configured:",Boolean(process.env.OPENAI_API_KEY),"| model:",process.env.OPENAI_MODEL||"default");openAISelfTest();});
+app.listen(port,()=>{console.log("Arman listening on",port,"| OpenAI key configured:",Boolean(process.env.OPENAI_API_KEY),"| model:",process.env.OPENAI_MODEL||"default");});
