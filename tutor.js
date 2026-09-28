@@ -6,15 +6,15 @@
   const wrap=document.createElement("div");
   wrap.className="tutor-wrap";
   wrap.innerHTML=`
-    <button class="tutor-fab" id="tutorFab" aria-label="Open PCP Tutor">
+    <button class="tutor-fab" id="tutorFab" aria-label="Open Arman">
       <span class="tutor-pulse"></span>
       <span class="tutor-icon">✦</span>
-      <span class="tutor-fab-label">PCP Tutor</span>
+      <span class="tutor-fab-label">Arman</span>
     </button>
-    <section class="tutor-panel" id="tutorPanel" aria-label="PCP Tutor chat">
+    <section class="tutor-panel" id="tutorPanel" aria-label="Arman chat">
       <header class="tutor-head">
         <div>
-          <div class="tutor-title"><span class="tutor-dot"></span>PCP Tutor</div>
+          <div class="tutor-title"><span class="tutor-dot"></span>Arman</div>
           <div class="tutor-sub">Ask about what you're studying on this page</div>
         </div>
         <div class="tutor-head-actions">
@@ -30,7 +30,7 @@
       </div>
       <div class="tutor-messages" id="tutorMessages"></div>
       <form class="tutor-form" id="tutorForm">
-        <textarea id="tutorInput" rows="1" placeholder="Ask PCP Tutor…" autocomplete="off"></textarea>
+        <textarea id="tutorInput" rows="1" placeholder="Ask Arman…" autocomplete="off"></textarea>
         <button type="submit" id="tutorSend" aria-label="Send">↑</button>
       </form>
       <div class="tutor-note">Study aid only • verify exact directive wording in current Ontario standards.</div>
@@ -54,7 +54,7 @@
   }
   function renderHistory(){
     messages.innerHTML="";
-    if(!history.length)add("assistant","I’m your PCP Tutor. Ask me about the class page you’re on, or hit **Quiz me** and I’ll test you.",false);
+    if(!history.length)add("assistant","I’m your Arman. Ask me about the class page you’re on, or hit **Quiz me** and I’ll test you.",false);
     else history.forEach(x=>add(x.role,x.text,false));
   }
   function open(){panel.classList.add("open");fab.classList.add("hidden");setTimeout(()=>input.focus(),80)}
