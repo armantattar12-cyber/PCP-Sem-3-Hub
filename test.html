@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Test Center | PCP Sem 3 Hub</title><link rel="stylesheet" href="styles.css"></head><body><div class="shell">
+<header class="top"><div class="brand"><div class="logo">PCP</div><div><b>PCP Sem 3 Hub</b><small>Test Center</small></div></div><nav class="nav"><a href="index.html">Home</a><a href="pcth.html">PCTH</a><a href="phrm.html">PHRM</a><a href="pclb.html">PCLB</a><a href="resc.html">RESC</a><a class="active" href="test.html">Test</a></nav></header>
+<main class="wrap">
+<section class="card coursehero test-hero"><div class="code">QUIZ CENTER</div><h1>Test what you actually know.</h1><p>Choose the class, week, and exact material you want. Then pick a quick drill, standard quiz, or the full available bank. After grading, review only what you missed and retest it.</p><div class="test-summary" id="historySummary"></div></section>
+
+<section id="builder" class="section">
+<div class="test-steps">
+  <div class="builder-step card"><div class="builder-num">1</div><div><h2>Choose class</h2><p>Start with the course you want to work on.</p></div></div>
+  <div class="builder-step card"><div class="builder-num">2</div><div><h2>Choose material</h2><p>Pick the exact week or lecture.</p></div></div>
+  <div class="builder-step card"><div class="builder-num">3</div><div><h2>Choose length</h2><p>Quick 5, standard 10, or full bank.</p></div></div>
+</div>
+
+<div class="selector-section"><div class="selector-title">1 • Class</div><div class="quiz-class-grid" id="classGrid">
+<button class="quiz-select-card active" data-class="pcth"><span class="select-accent" style="background:#4cd9e8"></span><span class="code">PCTH 308</span><b>Patient Care Theory</b><small>ECG + rhythms</small></button>
+<button class="quiz-select-card" data-class="phrm"><span class="select-accent" style="background:#72aaff"></span><span class="code">PHRM 208</span><b>Pharmacology</b><small>Directives + arrest</small></button>
+<button class="quiz-select-card disabled" disabled><span class="select-accent" style="background:#65e3a6"></span><span class="code">PCLB 308</span><b>Patient Care Lab</b><small>Add course material first</small></button>
+<button class="quiz-select-card disabled" disabled><span class="select-accent" style="background:#b69eff"></span><span class="code">RESC 108</span><b>Research</b><small>Add course material first</small></button>
+</div></div>
+
+<div class="selector-section"><div class="selector-title">2 • Week / material</div><div class="material-grid" id="materialGrid"></div></div>
+
+<div class="selector-section" id="lengthSection"><div class="selector-title">3 • Quiz length</div><div class="length-grid">
+<button class="length-card" data-length="5"><b>Quick 5</b><span>Fast recall check</span></button>
+<button class="length-card active" data-length="10"><b>Standard 10</b><span>Best everyday practice</span></button>
+<button class="length-card" data-length="full"><b>Full bank</b><span>Everything loaded for this material</span></button>
+</div></div>
+
+<div class="quiz-launch card"><div><div class="code">READY</div><h2 id="launchTitle">PCTH 308 • Week 1</h2><p id="launchSub">Introduction to ECG • 10 questions</p></div><button class="btn primary big" id="startBtn">Start Quiz →</button></div>
+</section>
+
+<section id="quizArea" class="section hidden">
+<div class="quiz-toolbar card"><div><div class="code" id="quizCourse">PCTH 308</div><h2 id="quizTitle">Quiz</h2><p id="quizMeta"></p></div><div class="quiz-progress-wrap"><div class="quiz-progress-label"><span id="answeredCount">0 answered</span><span id="questionCount"></span></div><div class="quiz-progress"><span id="progressBar"></span></div></div></div>
+<div id="questions"></div>
+<div class="gradebar card"><div><b>When you’re finished</b><span>You can leave blanks; they’ll count as missed.</span></div><button class="btn primary big" id="gradeBtn">Grade Quiz</button></div>
+</section>
+
+<section id="results" class="section hidden"></section>
+<footer class="footer">Your quiz scores and missed-question history are saved only in this browser. Course lectures and current Ontario standards/directives remain the source of truth.</footer>
+</main></div><script src="test.js" defer></script><script src="tutor.js" defer></script></body></html>
