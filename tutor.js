@@ -313,6 +313,7 @@
   fab.onclick=open; close.onclick=shut;
   clear.onclick=()=>{history=[];save();renderHistory();input.focus()}
   document.querySelectorAll(".tutor-quick button").forEach(b=>b.onclick=()=>{open();sendMessage(b.dataset.q)});
+  document.querySelectorAll("[data-arman-plan]").forEach(b=>b.onclick=e=>{e.preventDefault();open();sendMessage("I have 45 minutes. What should I do?")});
   input.addEventListener("input",()=>{input.style.height="auto";input.style.height=Math.min(input.scrollHeight,120)+"px"});
   input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();form.requestSubmit()}});
   form.addEventListener("submit",e=>{e.preventDefault();const q=input.value.trim();if(q)sendMessage(q)});
