@@ -187,8 +187,8 @@ function applyDeepLink(){
  }
  if(len&&(["5","10","full"].includes(len))) selectedLength=len;
 
- $("[data-class]").forEach(b=>b.classList.toggle("active",b.dataset.class===selectedClass));
- $(".length-card").forEach(b=>b.classList.toggle("active",String(b.dataset.length)===String(selectedLength)));
+ $$("[data-class]").forEach(b=>b.classList.toggle("active",b.dataset.class===selectedClass));
+ $$(".length-card").forEach(b=>b.classList.toggle("active",String(b.dataset.length)===String(selectedLength)));
 
  return p.get("start")==="1";
 }
