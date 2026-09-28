@@ -438,11 +438,13 @@
       return {label:"PHRM Week 2",href:"phrm.html#w2"};
     }
     if(phrm(s)&&has(s,"sga","supraglottic","i-gel","igel","airway")){
+      if(has(s,"directive image","directive visual","show directive","medical directive")) return {label:"PHRM • SGA Directive Visual",href:"phrm.html#sga-directive"};
       if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM • SGA Learn",href:"learn.html?deck=phrm-sga"};
       if(has(s,"quiz","test","questions")) return {label:"PHRM • SGA Quiz",href:"test.html?class=phrm&material=phrm-sga&length=10&start=1"};
       return {label:"PHRM • SGA Directive",href:"phrm.html#sga"};
     }
     if(phrm(s)&&has(s,"cardiac arrest","mca","pea","vf","vt","tor")){
+      if(has(s,"medical tor","termination of resuscitation")&&has(s,"directive image","directive visual","show directive","open","go to","take me")) return {label:"PHRM • Medical TOR Visual",href:"phrm.html#medical-tor-directive"};
       if(has(s,"learn","flashcard","flashcards","cards")) return {label:"PHRM • Cardiac Arrest Learn",href:"learn.html?deck=phrm-mca"};
       if(has(s,"quiz","test","questions")) return {label:"PHRM • Cardiac Arrest Quiz",href:"test.html?class=phrm&material=phrm-mca&length=10&start=1"};
       return {label:"PHRM • Cardiac Arrest",href:"phrm.html#mca"};
