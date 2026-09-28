@@ -69,4 +69,4 @@ ${String(pageContext||"").slice(0,14000)}`;
   }catch(e){console.error(e);res.status(500).json({error:"Arman hit a temporary error."})}
 });
 const port=process.env.PORT||10000;
-app.listen(port,()=>console.log("Arman listening on",port));
+app.listen(port,()=>console.log("Arman listening on",port,"| OpenAI key configured:",Boolean(process.env.OPENAI_API_KEY),"| model:",process.env.OPENAI_MODEL||"default"));
