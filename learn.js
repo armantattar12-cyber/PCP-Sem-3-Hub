@@ -531,9 +531,17 @@ function buildQueue(id){
 }
 
 function renderDeckGrid(){
-  $("#deckGrid").innerHTML=ORDER.map(id=>{
-    const d=DECKS[id],active=id===deckId?" active":"";
-    return '<button class="learn-deck-card'+active+'" data-deck="'+id+'"><span class="material-week">'+d.week+'</span><span class="code">'+d.classCode+'</span><b>'+esc(d.title)+'</b><small>'+esc(d.sub)+'</small><span class="deck-count">'+d.cards.length+' cards</span></button>';
+  const groups=[
+    {label:"Quiz 1 Prep",ids:["quizlet-q1-combined"]},
+    {label:"PCTH 308",ids:["pcth-w1","pcth-w2"]},
+    {label:"PHRM 208",ids:["phrm-sga","phrm-mca","phrm-w2"]}
+  ];
+  $("#deckGrid").innerHTML=groups.map(g=>{
+    const cards=g.ids.filter(id=>DECKS[id]).map(id=>{
+      const d=DECKS[id],active=id===deckId?" active":"";
+      return '<button class="learn-deck-card'+active+'" data-deck="'+id+'"><span class="material-week">'+d.week+'</span><span class="code">'+d.classCode+'</span><b>'+esc(d.title)+'</b><small>'+esc(d.sub)+'</small><span class="deck-count">'+d.cards.length+' cards</span></button>';
+    }).join("");
+    return '<div class="learn-deck-group"><div class="selector-title">'+g.label+'</div><div class="learn-deck-grid">'+cards+'</div></div>';
   }).join("");
   document.querySelectorAll("[data-deck]").forEach(b=>b.onclick=()=>selectDeck(b.dataset.deck));
 }
