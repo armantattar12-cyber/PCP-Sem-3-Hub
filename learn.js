@@ -149,315 +149,309 @@ const DECKS={
     {id:"rosc-checklist",f:"Core post-ROSC sequence",b:"Note ROSC time → repeat primary survey → monitor → ventilation/oxygenation → hemodynamics → 12-lead/STEMI assessment → reassess/transport.",n:"This follows the final Week 2 ROSC checklist."}
   ]
 },
-"quizlet-phrm-q1":{
-  classCode:"PHRM 208",week:"Quiz 1",title:"Quizlet Import — PHRM Quiz 1",sub:"20 cleaned cards • directives • arrest • ROSC • TXA • SGA",
-  test:"test.html?class=phrm",
+"quizlet-q1-combined":{
+  classCode:"PCTH 308 + PHRM 208",week:"Quiz 1",title:"Quiz 1 Prep — PCTH / PHRM",sub:"49 cleaned Quizlet cards • directives • ECG • rhythms • ROSC • TXA • SGA",
+  test:"test.html",
   cards:[
   {
-    "id": "ql-phrm-01",
+    "id": "quiz1-01",
     "f": "ACLS UPDATE — Suspected Opioid Overdose",
     "b": "Not suggesting naloxone during suspected opioid-related cardiac arrest.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-02",
+    "id": "quiz1-02",
     "f": "ACLS UPDATE — CPR",
     "b": "Infant CPR: 1 hand OR two-thumb encircling technique. Adult/ped choking: alternate 5 back blows + 5 abdominal thrusts. Ventilate to visible chest rise over ~1 sec; avoid hyperventilation.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-03",
+    "id": "quiz1-03",
     "f": "ACLS UPDATE — Trauma/Pregnancy/Moving Vehicle",
     "b": "No TXA for traumatic VSA. Pregnancy >20 weeks: consider early transport, CPR, early defib, manual uterine displacement. Analyze/defib while moving only if safe and rhythm is clear.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-04",
+    "id": "quiz1-04",
     "f": "Pediatric Symptomatic Bradycardia",
     "b": "HR <60 with cardiopulmonary compromise: support airway, ventilation and oxygenation. If compromise persists despite effective oxygenation/ventilation, initiate CPR.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-05",
+    "id": "quiz1-05",
     "f": "Obviously Dead Standard",
     "b": "Decapitation, transection, visible decomposition/putrefaction OR absent vital signs with gross charring, open head/torso with gross outpouring, gross rigor mortis, or dependent lividity.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-06",
+    "id": "quiz1-06",
     "f": "Medical Cardiac Arrest Medical Directive",
     "b": "Indication: non-traumatic cardiac arrest. Primary considerations include pregnancy >20 weeks and known reversible cause unable to be addressed. Refractory VF/pVT: consider DSED or VCD; transport after 3 doses.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-07",
+    "id": "quiz1-07",
     "f": "Medical Cardiac Arrest — Manual Defibrillation",
     "b": "Indication: non-traumatic cardiac arrest. Conditions: age >24 h, altered LOA, VF or pulseless VT. Contraindications: none in pasted set.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-08",
+    "id": "quiz1-08",
     "f": "Medical Cardiac Arrest — Manual Defib Treatment",
     "b": "Age >24 h to <8 y: initial 2 J/kg, subsequent 4 J/kg, 2-min intervals. Age >8 y: as per RBHP/manufacturer.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-09",
+    "id": "quiz1-09",
     "f": "Medical Cardiac Arrest — Medical TOR",
     "b": "Age >16, arrest not witnessed by paramedic, no ROSC after 20 min, no defibrillation. Contra: pregnancy >20 wks, suspected hypothermia, airway obstruction, non-opioid overdose/toxicology.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-10",
+    "id": "quiz1-10",
     "f": "Medical Cardiac Arrest — Epinephrine",
     "b": "Non-traumatic arrest; age >24 h; altered; anaphylaxis suspected as causative event. Contraindication: allergy/sensitivity to epinephrine.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-11",
+    "id": "quiz1-11",
     "f": "Medical Cardiac Arrest — DSED/VCD",
     "b": "Age >18, non-traumatic VF/pulseless VT of presumed cardiac origin, after 3 consecutive standard shocks by paramedics/fire services.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-12",
+    "id": "quiz1-12",
     "f": "Trauma Cardiac Arrest — CPR",
     "b": "Cardiac arrest secondary to severe blunt or penetrating trauma. CPR in 2-min intervals. Contra: obviously dead per BLS PCS or meets DNR conditions.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-13",
+    "id": "quiz1-13",
     "f": "Trauma Cardiac Arrest — Manual Defibrillation",
     "b": "Severe blunt/penetrating trauma arrest; age >24 h; altered; VF or pulseless VT. Contra: rhythms other than VF/pVT.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-14",
+    "id": "quiz1-14",
     "f": "TXA — Traumatic Hemorrhage Directive",
     "b": "Suspected traumatic hemorrhage AND hemodynamic instability. Age ≥16; HR ≥110 or hypotensive. Contra: TXA allergy, >3 h/unknown injury time, isolated head injury.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-15",
+    "id": "quiz1-15",
     "f": "TXA Dose",
     "b": "1000 mg split into 2 doses (as written in the pasted Quizlet set).",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-16",
+    "id": "quiz1-16",
     "f": "Reversible Causes — Early Transport Considerations",
     "b": "Hypoxia; hypo/hyperkalemia; hypo/hyperthermia; hypovolemia; hydrogen ion/acidosis; tension pneumothorax; tamponade; thrombosis; toxins.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-17",
+    "id": "quiz1-17",
     "f": "Trauma TOR — Conditions",
     "b": "Age >16; altered; no palpable pulses AND no defib AND no signs of life since full extrication OR signs of life with closest ED >30 min OR PEA with closest ED >30 min.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-18",
+    "id": "quiz1-18",
     "f": "Trauma TOR — Contraindications",
     "b": "Age <16; defib delivered; signs of life since full extrication; PEA + closest ED <30 min; penetrating torso/head/neck + lead trauma hospital <30 min.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-19",
+    "id": "quiz1-19",
     "f": "Supraglottic Airway Medical Directive",
     "b": "Need ventilatory assistance/airway control AND other airway management ineffective. Condition: absent gag. Contra: foreign-body obstruction, esophageal disease/varices, oropharyngeal trauma, caustic ingestion.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
   },
   {
-    "id": "ql-phrm-20",
+    "id": "quiz1-20",
     "f": "ROSC Checklist",
     "b": "Note ROSC time; repeat primary survey; plan egress; monitoring; address ventilation (ETCO₂ 30–40), oxygen (SpO₂ 94–98), hemodynamics, STEMI/12-lead; reassess en route and update hospital.",
-    "n": "Imported from the pasted Quizlet set. For exact directive wording, verify against the current ALS PCS/BLS PCS/Companion Document."
-  }
-]
-},
-"quizlet-pcth-q1":{
-  classCode:"PCTH 308",week:"Quiz 1",title:"Quizlet Import — PCTH Quiz 1",sub:"29 cleaned cards • ECG • rhythms • autonomics • conduction",
-  test:"test.html?class=pcth",
-  cards:[
+    "n": "PHRM Quiz 1 • Imported from the pasted Quizlet set. Verify exact directive wording against current ALS PCS/BLS PCS/Companion."
+  },
   {
-    "id": "ql-pcth-01",
+    "id": "quiz1-21",
     "f": "Sympathetic nervous system — ganglionic",
     "b": "Preganglionic fibre short; postganglionic fibre long; preganglionic neurotransmitter acetylcholine; postganglionic neurotransmitter norepinephrine.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-02",
+    "id": "quiz1-22",
     "f": "Parasympathetic nervous system — ganglionic",
     "b": "Preganglionic fibre long; postganglionic fibre short; pre- and postganglionic neurotransmitter acetylcholine.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-03",
+    "id": "quiz1-23",
     "f": "Chronotropic / Inotropic / Dromotropic",
     "b": "Chronotropic = change in heart rate. Inotropic = change in myocardial contractility. Dromotropic = conduction speed through the AV junction.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-04",
+    "id": "quiz1-24",
     "f": "Cardiac Action Potential — Phases 0–1",
     "b": "Phase 0: depolarization; Na+ rapidly enters. Phase 1: early repolarization; Na+ channels partly close and K+ leaves.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-05",
+    "id": "quiz1-25",
     "f": "Cardiac Action Potential — Phases 2–4",
     "b": "Phase 2: plateau; K+ leaves slowly, Ca++ enters slowly. Phase 3: rapid repolarization; K+ leaves quickly. Phase 4: return to resting; K+ closes and Ca++ is transported out/into SR.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-06",
+    "id": "quiz1-26",
     "f": "Conduction System",
     "b": "SA node 60–100 → AV node 40–60 → Bundle of His 40–60 → R/L bundle branches → Purkinje fibres 20–40.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-07",
+    "id": "quiz1-27",
     "f": "Limb & Augmented Leads",
     "b": "6 limb leads: I, II, III plus aVR, aVL, aVF. Pasted set: right arm electrode negative; left leg positive. aVR views from right arm, aVL left arm, aVF left leg.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-08",
+    "id": "quiz1-28",
     "f": "ECG Boxes",
     "b": "1 small box = 0.04 s. 1 large box = 0.20 s. 5 large = 1 s. 15 large = 3 s. 30 large = 6 s.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-09",
+    "id": "quiz1-29",
     "f": "Sinus Bradycardia",
     "b": "Like NSR but <60 bpm: regular, P present, PR normal, QRS narrow. Clue: slow NSR; common in athletes or sleep.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-10",
+    "id": "quiz1-30",
     "f": "Sinus Tachycardia",
     "b": "Like NSR but >100 bpm: regular, P present, narrow QRS. Clue: fast NSR; consider exercise, stress, fever.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-11",
+    "id": "quiz1-31",
     "f": "Junctional Escape Rhythm",
     "b": "Regular 40–60 bpm; P absent/inverted and may be before/after QRS; QRS narrow. Clue: AV-junction backup rhythm.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-12",
+    "id": "quiz1-32",
     "f": "Atrial Flutter",
     "b": "Saw-tooth flutter waves; often 2:1 conduction. Pasted set describes rhythm as regular or irregular depending on conduction.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-13",
+    "id": "quiz1-33",
     "f": "Atrial Fibrillation",
     "b": "Irregularly irregular; no distinct P waves; chaotic baseline; usually narrow QRS.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-14",
+    "id": "quiz1-34",
     "f": "Ventricular Fibrillation",
     "b": "Chaotic irregular waveform with no organized P/QRS/T and no pulse.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-15",
+    "id": "quiz1-35",
     "f": "Ventricular Tachycardia",
     "b": "Fast, usually regular, wide QRS; P may not be visible; pulse may be present or absent.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-16",
+    "id": "quiz1-36",
     "f": "Torsades de Pointes",
     "b": "Irregular polymorphic VT with QRS complexes twisting around the baseline; associated with prolonged QT.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-17",
+    "id": "quiz1-37",
     "f": "Asystole",
     "b": "Flatline / no electrical activity and no pulse; non-shockable arrest rhythm.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-18",
+    "id": "quiz1-38",
     "f": "Sinus Arrhythmia",
     "b": "Irregular sinus rhythm with P before QRS, normal PR, narrow QRS; commonly varies with respiration.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-19",
+    "id": "quiz1-39",
     "f": "1st-Degree AV Block",
     "b": "Regular rhythm; PR >0.20 s (>5 small boxes); every P conducts to QRS. Clue: 'P far from R.'",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-20",
+    "id": "quiz1-40",
     "f": "2nd-Degree AV Block Type I",
     "b": "PR progressively lengthens until a QRS drops, then resets. Clue: 'longer, longer, drop.'",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-21",
+    "id": "quiz1-41",
     "f": "2nd-Degree AV Block Type II",
     "b": "PR stays constant on conducted beats with intermittent dropped QRS complexes. Clue: 'same, same, drop.'",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-22",
+    "id": "quiz1-42",
     "f": "3rd-Degree AV Block",
     "b": "P waves and QRS complexes each march regularly but independently; no consistent P-QRS relationship.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-23",
+    "id": "quiz1-43",
     "f": "Premature Ventricular Complex (PVC)",
     "b": "Early, wide/bizarre QRS (>0.12 s), usually no preceding P; may occur in bigeminy/trigeminy.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-24",
+    "id": "quiz1-44",
     "f": "Premature Atrial Complex (PAC)",
     "b": "Early abnormal P wave (may be flattened/notched); PR can vary; QRS usually normal/narrow.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-25",
+    "id": "quiz1-45",
     "f": "Premature Junctional Complex (PJC)",
     "b": "Early junctional beat; P absent/inverted and may be before/after QRS; QRS narrow.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-26",
+    "id": "quiz1-46",
     "f": "Atrial Pacing",
     "b": "Pacing spike precedes the P wave.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-27",
+    "id": "quiz1-47",
     "f": "Ventricular Pacing",
     "b": "Pacing spike precedes the QRS complex.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-28",
+    "id": "quiz1-48",
     "f": "Dual-Chamber Pacing",
     "b": "May show atrial pacing, ventricular pacing, or both.",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   },
   {
-    "id": "ql-pcth-29",
+    "id": "quiz1-49",
     "f": "Idioventricular Rhythm (IVR)",
     "b": "Slow 20–40 bpm, wide QRS, no visible P waves. Clue: 'slow & low, P's don't show.'",
-    "n": "Imported and cleaned from the pasted Quizlet set."
+    "n": "PCTH Quiz 1 • Imported and cleaned from the pasted Quizlet set."
   }
 ]
 }
 };
 
-const ORDER=["pcth-w1","pcth-w2","quizlet-pcth-q1","phrm-sga","phrm-mca","phrm-w2","quizlet-phrm-q1"];
+const ORDER=["quizlet-q1-combined","pcth-w1","pcth-w2","phrm-sga","phrm-mca","phrm-w2"];
 const TOPIC_CARDS={
   "pcth-w1":{
     cells:["auto","excite","conduct","contract","refract","chrono","ino","dromo","symp","para"],
