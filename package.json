@@ -2,6 +2,6 @@
   "name":"pcp-sem-3-tutor",
   "version":"1.0.0",
   "private":true,
-  "scripts":{"start":"node contest-bootstrap.js"},
+  "scripts":{"start":"node server.js"},
   "dependencies":{"express":"^5.1.0","socket.io":"^4.8.1"}
 }
